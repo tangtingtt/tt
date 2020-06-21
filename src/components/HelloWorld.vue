@@ -1,6 +1,8 @@
 <template>
   <div class="hello">
+    <img src="../assets/logo.jpg" class="index-logo">
     <h1>{{ msg }}</h1>
+    <el-button type="primary" @click="goIndex">进入首页</el-button>
   </div>
 </template>
 
@@ -10,6 +12,11 @@ export default {
   data () {
     return {
       msg: '欢迎来到我的世界'
+    }
+  },
+  methods: {
+    goIndex () {
+      this.$router.push({ name: 'Index' })
     }
   }
 }
@@ -30,5 +37,10 @@ li {
 }
 a {
   color: #42b983;
+}
+.index-logo {
+  width: 200px;
+  border-radius: 50%;
+  height: 200px;
 }
 </style>

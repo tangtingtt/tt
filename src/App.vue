@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.jpg" class="index-logo">
     <router-view/>
   </div>
 </template>
@@ -19,10 +18,5 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-}
-.index-logo {
-  width: 200px;
-  border-radius: 50%;
-  height: 200px;
 }
 </style>
