@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     goIndex () {
-      this.$router.push({ name: 'Index' })
+      this.$router.push({ name: 'FirstPage' })
     }
   }
 }

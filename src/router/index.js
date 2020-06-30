@@ -13,9 +13,20 @@ export default new Router({
       component: HelloWorld
     },
     {
-      path: '/index',
+      path: '',
       name: 'Index',
-      component: Index
+      component: Index,
+      children: [
+        {
+          path: '/index',
+          component: () => import('@/views/index/index'),
+          name: 'FirstPage',
+          meta: {
+            title: '首页',
+            noCache: true
+          }
+        }
+      ]
     }
   ]
 })

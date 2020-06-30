@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <router-view/>
+    <vueToTop :top="50" :color="'#ffc0cb'" :type="4"></vueToTop>
   </div>
 </template>
 

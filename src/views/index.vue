@@ -10,7 +10,9 @@
         </div>
       </div>
     </div>
-    <div class="main-container">这是首页</div>
+    <div class="main-container">
+      <router-view />
+    </div>
   </div>
 </template>
 
@@ -35,6 +37,7 @@ export default {
 <style scoped>
 .header-container {
     height: 60px;
+    box-shadow: 0px 2px 5px #f3f3f3;
 }
 .header-container-box {
   justify-content: space-between;
@@ -71,8 +74,5 @@ export default {
 }
 .header-container-item:hover:after, .header-container-item:hover:before {
   width: 20%;
-}
-.main-container {
-  background-color: pink;
 }
 </style>
