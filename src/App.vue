@@ -14,6 +14,7 @@ export default {
 <style>
 body {
   margin: 0;
+  cursor: url(/assets/3.png),pointer;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
@@ -33,5 +34,14 @@ body {
 }
 .margin-auto {
   margin: 0 auto;
+}
+.text-left {
+  text-align: left;
+}
+.positionR {
+  position: relative;
+}
+.cursor {
+    cursor: pointer;
 }
 </style>
