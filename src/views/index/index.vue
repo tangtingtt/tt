@@ -2,9 +2,11 @@
   <div class="index-container">
     <div class="first-div">
         <div class="swiper-div">
-        <el-carousel :interval="4000" type="card" height="200px">
+        <el-carousel :interval="400000" type="card" height="200px">
             <el-carousel-item v-for="item in 3" :key="item">
-                这里放个人介绍
+                <div>毎日はもっと楽しくて、少し楽しくて、毎秒好きになる。
+                  <span class="icon iconfont icon-xianxingwaijiao" style="color: #1B7CB4;"></span>
+                </div>
             </el-carousel-item>
         </el-carousel>
         </div>
@@ -49,9 +51,20 @@ export default {
     background: url(/static/img/2.4def7a7.jpg) 0 220px no-repeat;
 }
 .swiper-div {
-    width: 400px;
+    width: 460px;
     height: 220px;
 }
+.el-carousel--horizontal {
+  overflow-x: visible;
+}
+.el-carousel--horizontal button {
+    background-color: #4AAFE5;
+    opacity: .24;
+    width: 8px !important;
+    height: 8px;
+    border-radius: 4px;
+}
+
 .el-carousel__item h3 {
     color: #475669;
     font-size: 14px;
@@ -60,10 +73,19 @@ export default {
     margin: 0;
   }
 .el-carousel__item:nth-child(2n) {
-    background-color: #99a9bf;
+    border: 2px dashed #4AAFE5;
+    border-radius: 4px;
+    background-color: #fff;
 }
 .el-carousel__item:nth-child(2n+1) {
-    background-color: #d3dce6;
+    border: 2px dashed #4AAFE5;
+    border-radius: 4px;
+    background-color: #fff;
+}
+.el-carousel__item div {
+  font-size: 14px;
+  padding: 24px;
+  color: #1B7CB4;
 }
 .second-div .imgDiv span {
     position: absolute;

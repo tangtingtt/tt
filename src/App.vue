@@ -14,7 +14,7 @@ export default {
 <style>
 body {
   margin: 0;
-  cursor: url(/assets/3.png),pointer;
+  cursor: url(./assets/teacher.png),pointer;
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

@@ -7,6 +7,8 @@ import App from './App'
 import router from './router'
 import vueToTop from 'vue-totop'
 
+import './assets/icon/iconfont.css'
+
 Vue.use(ElementUI)
 Vue.use(vueToTop)
 
