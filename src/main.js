@@ -6,9 +6,16 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import vueToTop from 'vue-totop'
-
 import './assets/icon/iconfont.css'
 
+// 引入echarts
+import echarts from 'echarts'
+Vue.prototype.$echarts = echarts
+
+// 引入音乐插件
+import vueAplayer from 'vue-aplayer'
+
+Vue.use(vueAplayer)
 Vue.use(ElementUI)
 Vue.use(vueToTop)
 
