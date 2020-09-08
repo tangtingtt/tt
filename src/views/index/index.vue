@@ -25,11 +25,15 @@
          <aplayer :music="videoUpload.music"></aplayer>
       </div>
     </div>
+    <div class="four-div">
+        <worldCloud></worldCloud>
+    </div>
   </div>
 </template>
 
 <script>
 import aplayer from 'vue-aplayer'
+import worldCloud from '../../components/worldCloud'
 export default {
   name: 'FirstPage',
   data () {
@@ -54,7 +58,8 @@ export default {
     }
   },
   components: {
-    aplayer
+    aplayer,
+    worldCloud
   },
   mounted(){
     this.drawLine();
@@ -114,6 +119,12 @@ export default {
     position: fixed;
     bottom: 6px;
     left: 6px;
+}
+.four-div {
+    width: 500px;
+    height: 500px;
+    border: 2px solid pink;
+    margin: 24px auto;
 }
 .swiper-div {
     width: 460px;
