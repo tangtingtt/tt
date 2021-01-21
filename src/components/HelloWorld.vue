@@ -2,7 +2,7 @@
   <div class="hello">
     <img src="../assets/logo.jpg" class="index-logo">
     <h1>{{ msg }}</h1>
-    <el-button type="primary" @click="goIndex">进入首页</el-button>
+    <el-button type="primary" @click="goIndex">进入系统</el-button>
   </div>
 </template>
 
@@ -11,7 +11,7 @@ export default {
   name: 'HelloWorld',
   data () {
     return {
-      msg: '欢迎来到我的世界'
+      msg: '欢迎访问'
     }
   },
   methods: {
@@ -42,5 +42,9 @@ a {
   width: 200px;
   border-radius: 50%;
   height: 200px;
+}
+.hello {
+  margin-top: calc(50vh - 200px);
+  text-align: center;
 }
 </style>

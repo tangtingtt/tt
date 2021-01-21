@@ -14,13 +14,13 @@ export default {
 <style>
 body {
   margin: 0;
-  cursor: url(./assets/teacher.png),pointer;
+  background: #f4f5f7;
+  /* cursor: url(./assets/teacher.png),pointer; */
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
 }
 .inline-block {

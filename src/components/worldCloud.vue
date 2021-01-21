@@ -53,12 +53,11 @@ export default {
     .hovertreeinfo{text-align:center;margin-top:10px;}
     .hovertreeinfo a{color:black;}
     #hovertreetags {
-    width: 500px;
-    height: 500px;
+    width: 320px;
+    height: 320px;
     position: relative;
     font-size: 12px;
     color: #333;
-    margin: 20px auto 0;
     text-align: center;
     border: 1px solid silver;
 }
