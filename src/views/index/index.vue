@@ -15,10 +15,7 @@
         </el-carousel>
       </div>
       <div class="center-slide">
-        <div class="imgDiv inline-block positionR cursor">
-          <span>解说</span>
-          <img src="../../assets/1.png" class="index-logo" />
-        </div>
+        <worldCloud></worldCloud>
       </div>
       <div class="right-slide">
         <div id="myChart" :style="{ width: '500px', height: '220px' }"></div>
@@ -27,13 +24,10 @@
     <div class="second-div">
       
     </div>
-    <div class="third-div">
+    <div class="aplayer-div">
       <div style="width: 280px">
         <aplayer :music="videoUpload.music"></aplayer>
       </div>
-    </div>
-    <div class="four-div">
-      <worldCloud></worldCloud>
     </div>
   </div>
 </template>
@@ -46,7 +40,7 @@ export default {
   data() {
     return {
       videoUpload: {
-        //progress: false,
+        // progress: false,
         // progressPercent: 0,
         // successPercent: 0,
         theme: "#ffc0cb",
@@ -71,30 +65,10 @@ export default {
     worldCloud,
   },
   mounted() {
-    this.drawLine();
+
   },
   methods: {
-    drawLine() {
-      // 基于准备好的dom，初始化echarts实例
-      let myChart = this.$echarts.init(document.getElementById("myChart"));
-      // 绘制图表
-      myChart.setOption({
-        title: { text: "在Vue中使用echarts" },
-        tooltip: {},
-        xAxis: {
-          data: ["衬衫", "羊毛衫", "雪纺衫", "裤子", "高跟鞋", "袜子"],
-        },
-        yAxis: {},
-        series: [
-          {
-            name: "销量",
-            type: "bar",
-            data: [5, 20, 36, 10, 10, 20],
-          },
-        ],
-      });
-    },
-  },
+  }
 };
 </script>
 
@@ -112,11 +86,9 @@ export default {
 }
 .first-div .left-slide {
   display: inline-block;
-  float: left;
 }
 .first-div .right-slide {
   display: inline-block;
-  float: right;
 }
 .second-div {
   border: 2px solid #81c0a1;
@@ -126,14 +98,10 @@ export default {
   height: 240px;
   background: url(/static/img/2.4def7a7.jpg) 0 220px no-repeat;
 }
-.third-div {
+.aplayer-div {
   position: fixed;
   bottom: 6px;
   left: 6px;
-}
-.four-div {
-  border: 2px solid pink;
-  margin: 24px auto;
 }
 .swiper-div {
   width: 460px;
@@ -171,20 +139,5 @@ export default {
   font-size: 14px;
   padding: 24px;
   color: #1b7cb4;
-}
-.center-slide .imgDiv span {
-  position: absolute;
-  left: 20px;
-  text-align: center;
-  font-size: 14px;
-  top: -10px;
-  width: 20px;
-  background-color: #fff;
-  padding: 16px 6px;
-  border: 1px solid #d46ac8;
-  transition: all 0.4s ease;
-}
-.center-slide .imgDiv:hover span {
-  transform: translate(0, -10px);
 }
 </style>

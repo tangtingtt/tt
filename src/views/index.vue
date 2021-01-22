@@ -7,7 +7,12 @@
           <span class="my-face">喵~ ＞▽＜</span>
         </div>
         <div>
-          <div v-for="(item,index) in headerList" :key="index" class="header-container-item inline-block">{{item.name}}</div>
+          <div 
+            v-for="(item,index) in headerList"
+            :key="index"
+            :class="item.code==$route.meta.activeMenu?'header-container-item-active':'header-container-item'"
+            class="inline-block"
+          >{{item.name}}</div>
         </div>
       </div>
     </div>
@@ -23,11 +28,11 @@ export default {
   data () {
     return {
       headerList: [
-        {name: '首页'},
-        {name: 'CSS效果'},
-        {name: 'swiprt效果'},
-        {name: '博客'},
-        {name: '关于我'}
+        {name: '首页',code:'index'},
+        {name: 'CSS效果',code:'css'},
+        // {name: 'swiprt效果'},
+        // {name: '博客',code:'index'},
+        {name: '关于我',code:'about'}
       ]
     }
   }
@@ -46,10 +51,9 @@ export default {
   align-items: center;
   padding: 0 30px;
 }
-.header-container-item {
+.header-container-item,.header-container-item-active {
   cursor: pointer;
   color: pink;
-  margin-left: 30px;
   padding: 10px 30px;
   position: relative;
 }
@@ -77,6 +81,15 @@ export default {
 }
 .header-container-item:hover:after, .header-container-item:hover:before {
   width: 20%;
+}
+.header-container-item-active:before {
+    position: absolute;
+    right: 40%;
+    bottom: 0px;
+    width: 20%;
+    height: 2px;
+    content: "";
+    background: currentColor;
 }
 .main-container {
   margin: 50px 60px;

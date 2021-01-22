@@ -23,7 +23,8 @@ export default new Router({
           name: 'FirstPage',
           meta: {
             title: '首页',
-            noCache: true
+            noCache: true,
+            activeMenu: 'index'
           }
         }
       ]

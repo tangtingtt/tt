@@ -1,6 +1,5 @@
 <template>
   <div class="hello">
-    <h1>{{ msg }}</h1>
     <div id="hovertreetags">
         <a href="http://hovertree.com/menu/java/" class="tagc1">Java</a>
         <a href="http://hovertree.com/menu/visualstudio/" class="tagc2">Visual Studio</a>
@@ -36,7 +35,6 @@ export default {
   name: 'worldCloud',
   data () {
     return {
-      msg: '词云'
     }
   },
   mounted() {
@@ -54,12 +52,11 @@ export default {
     .hovertreeinfo a{color:black;}
     #hovertreetags {
     width: 320px;
-    height: 320px;
+    height: 250px;
     position: relative;
     font-size: 12px;
     color: #333;
     text-align: center;
-    border: 1px solid silver;
 }
 
     #hovertreetags a {
