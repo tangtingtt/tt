@@ -26,6 +26,16 @@ export default new Router({
             noCache: true,
             activeMenu: 'index'
           }
+        },
+        {
+          path: '/cssIndex',
+          component: () => import('@/views/cssViewPage/index'),
+          name: 'cssPage',
+          meta: {
+            title: 'CSS效果页',
+            noCache: true,
+            activeMenu: 'css'
+          }
         }
       ]
     }

@@ -12,6 +12,7 @@
             :key="index"
             :class="item.code==$route.meta.activeMenu?'header-container-item-active':'header-container-item'"
             class="inline-block"
+            @click="changePage(item)"
           >{{item.name}}</div>
         </div>
       </div>
@@ -28,13 +29,18 @@ export default {
   data () {
     return {
       headerList: [
-        {name: '首页',code:'index'},
-        {name: 'CSS效果',code:'css'},
+        {name: '首页',code:'index',path: '/index'},
+        {name: 'CSS效果',code:'css',path:'/cssIndex'},
         // {name: 'swiprt效果'},
         // {name: '博客',code:'index'},
         {name: '关于我',code:'about'}
       ]
     }
+  },
+  methods: {
+      changePage(item) {
+          this.$router.push({path:item.path})
+      }
   }
 }
 </script>
@@ -53,7 +59,7 @@ export default {
 }
 .header-container-item,.header-container-item-active {
   cursor: pointer;
-  color: pink;
+  color: #1f1111;
   padding: 10px 30px;
   position: relative;
 }

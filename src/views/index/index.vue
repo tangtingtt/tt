@@ -17,8 +17,11 @@
       <div class="center-slide">
         <worldCloud></worldCloud>
       </div>
-      <div class="right-slide">
-        <div id="myChart" :style="{ width: '500px', height: '220px' }"></div>
+      <div class="right-slide" id="review_box" @mouseleave="scroll()" @mouseover="stop()">
+        <ul id="comment1">
+          <li v-for="(item,index) in list" :key="index">{{item}}</li>
+        </ul>
+        <ul id="comment2"></ul>
       </div>
     </div>
     <div class="second-div">
@@ -58,6 +61,16 @@ export default {
         },
       },
       initDate: "这是首页",
+      list: [
+        'Vue列表渲染',
+        'SpringMVC中RequestMapping注解【作用、出现的位置、属性】',
+        '解决iframe跨域跟父级进行通讯问题【postMessage】 重点是跨域进行通讯！ ',
+        '滑动翻页效果实现和移动端click事件问题',
+        '寒假学习的第二周 ',
+        'Vscode中使用Git可视化面板管理代码仓库 - 视频教程',
+        '计算器项目'
+      ],
+      timer: null
     };
   },
   components: {
@@ -65,9 +78,39 @@ export default {
     worldCloud,
   },
   mounted() {
-
+    this.roll()
   },
   methods: {
+    roll(t) {
+      var ul1 = document.getElementById("comment1");
+      var ul2 = document.getElementById("comment2");
+      var ulbox = document.getElementById("review_box");
+      ul2.innerHTML = ul1.innerHTML;
+      ulbox.scrollTop = 0; // 开始无滚动时设为0
+      this.timer = setInterval(this.rollStart, 80); // 设置定时器，参数t用在这为间隔时间（单位毫秒），参数t越小，滚动速度越快
+    },
+    stop() {
+      clearInterval(this.timer)
+    },
+    scroll() {
+      this.timer = setInterval(this.rollStart, 80);
+    },
+    // 开始滚动函数
+    rollStart() {
+      // 上面声明的DOM对象为局部对象需要再次声明
+      var ul1 = document.getElementById("comment1");
+      var ul2 = document.getElementById("comment2");
+      var ulbox = document.getElementById("review_box");
+      // 正常滚动不断给scrollTop的值+1,当滚动高度大于列表内容高度时恢复为0
+      if (ulbox.scrollTop >= ul1.scrollHeight) {
+        ulbox.scrollTop = 0;
+      } else {
+        ulbox.scrollTop++;
+      }
+    }
+  },
+  destroyed() {
+    clearInterval(this.timer)
   }
 };
 </script>
@@ -88,7 +131,25 @@ export default {
   display: inline-block;
 }
 .first-div .right-slide {
-  display: inline-block;
+    display: inline-block;
+    width: 800px;
+    height: 252px;
+    overflow: hidden;
+    border: 1px solid red;
+}
+.first-div .right-slide ul {
+  margin: 0px;
+}
+.first-div .right-slide li {
+  font-size: 16px;
+  height: 36px;
+  line-height: 36px;
+  cursor: pointer;
+}
+.first-div .right-slide li {
+  &:hover {
+    color: pink;
+  }
 }
 .second-div {
   border: 2px solid #81c0a1;
