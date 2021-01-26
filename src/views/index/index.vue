@@ -15,7 +15,6 @@
         </el-carousel>
       </div>
       <div class="center-slide">
-        <worldCloud></worldCloud>
       </div>
       <div class="right-slide" id="review_box" @mouseleave="scroll()" @mouseover="stop()">
         <ul id="comment1">
@@ -37,7 +36,6 @@
 
 <script>
 import aplayer from "vue-aplayer";
-import worldCloud from "../../components/worldCloud";
 export default {
   name: "FirstPage",
   data() {
@@ -75,7 +73,6 @@ export default {
   },
   components: {
     aplayer,
-    worldCloud,
   },
   mounted() {
     this.roll()
