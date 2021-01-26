@@ -135,7 +135,6 @@ export default {
     width: 800px;
     height: 252px;
     overflow: hidden;
-    border: 1px solid red;
 }
 .first-div .right-slide ul {
   margin: 0px;

@@ -38,6 +38,15 @@ export default new Router({
           }
         }
       ]
+    },
+    {
+      path: "/404",
+      name: "Error404Page",
+      component: () => import('@/views/404')
+    },
+    {
+      path: "*", // 此处需特别注意置于最底部
+      redirect: "/404" //无匹配到的路径自动重定向到404页面
     }
   ]
 })

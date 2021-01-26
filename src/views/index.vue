@@ -33,7 +33,7 @@ export default {
         {name: 'CSS效果',code:'css',path:'/cssIndex'},
         // {name: 'swiprt效果'},
         // {name: '博客',code:'index'},
-        {name: '关于我',code:'about'}
+        {name: '关于我',code:'about',path:'/about'}
       ]
     }
   },
