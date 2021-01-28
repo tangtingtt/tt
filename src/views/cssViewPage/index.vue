@@ -42,6 +42,9 @@
         <span class="preview-icon">🙈</span>
       </i>
     </div>
+     <div class="size1 positionR">
+        <span class="rshare-qzone"></span>
+    </div>
   </div>
 </template>
 
@@ -875,6 +878,24 @@ export default {
 
     0%,100% {
         transform: translate(0, 0) rotate(0)
+    }
+}
+.rshare-qzone {
+    display: block;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    background-image: url('https://img.jbzj.com/skin/2018/images/share-icons.png');
+    background-repeat: no-repeat;
+    background-position: -3px -50px;
+    border: 1px solid red;
+    line-height: 36px;
+    transition: .4s;
+    -webkit-transition: .4s;
+    &:hover {
+      background-color: #ffa709;
+      background-position: -48px -50px;
     }
 }
 </style>
