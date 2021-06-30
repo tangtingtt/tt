@@ -36,6 +36,16 @@ export default new Router({
             noCache: true,
             activeMenu: 'css'
           }
+        },
+        {
+          path:'/jsIndex',
+          component: () => import('@/views/jsPage/index'),
+          name: 'cssPage',
+          meta: {
+            title: 'JS效果页',
+            noCache: true,
+            activeMenu: 'js'
+          }
         }
       ]
     },

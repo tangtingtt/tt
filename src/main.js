@@ -13,6 +13,7 @@ import vueAplayer from 'vue-aplayer'
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 
+import './assets/css/font.scss';
 
 
 Vue.use(vueAplayer)
