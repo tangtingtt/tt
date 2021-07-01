@@ -12,7 +12,7 @@ import vueAplayer from 'vue-aplayer'
 // 引入echarts
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
-
+import './assets/css/common.scss';
 import './assets/css/font.scss';
 
 

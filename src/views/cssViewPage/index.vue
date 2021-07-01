@@ -54,6 +54,25 @@
     <div class="size1 positionR">
         <a href="#" class="hvr-curl-top-left">Curl Top Left</a>
     </div>
+    <div class="size1 relative">
+        <div class="cloud"></div>
+    </div>
+    <div class="size1 tt12 relative">
+        <div class="flower">
+						<div class="flower-top">
+							<p></p>
+							<p></p>
+							<p></p>
+							<p></p>
+						</div>
+						<div class="flower-head"></div>
+					</div>
+    </div>
+    <div class="size1 tt13 relative">
+        <div class="bee">
+						<img src="@/assets/been.jpg"/>
+					</div>
+    </div>
   </div>
 </template>
 
@@ -77,6 +96,174 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.tt13 {
+  .bee {
+      width: 22%;
+      height: auto;
+      img {
+          width: 100%;
+      }
+      will-change: transform;
+      animation: bee1 6s ease-in infinite;
+      -webkit-animation: bee1 6s ease-in infinite;
+  }
+}
+@keyframes bee1{0%{transform:rotateY(0deg) translate3d(0,0,0)}
+25%{transform:rotateY(0deg) translate3d(50%,100%,0)}
+49.9%{transform:rotateY(0deg) translate3d(100%,0,0)}
+50%{transform:rotateY(180deg) translate3d(-100%,0,0)}
+75%{transform:rotateY(180deg) translate3d(-50%,-100%,0)}
+99.9%{transform:rotateY(180deg) translate3d(0,0,0)}
+100%{transform:rotateY(0deg) translate3d(0,0,0)}}
+@-webkit-keyframes bee1{0%{transform:rotateY(0deg) translate3d(0,0,0)}
+25%{transform:rotateY(0deg) translate3d(50%,100%,0)}
+49.9%{transform:rotateY(0deg) translate3d(100%,0,0)}
+50%{transform:rotateY(180deg) translate3d(-100%,0,0)}
+75%{transform:rotateY(180deg) translate3d(-50%,-100%,0)}
+99.9%{transform:rotateY(180deg) translate3d(0,0,0)}
+100%{transform:rotateY(0deg) translate3d(0,0,0)}}
+.tt12 {
+  .flower {
+    width: 2rem;
+    height: 4rem;
+    top: 29%;
+    left: 39%;
+    -webkit-animation: rock-data-v-6a0dcf10 3s ease-in infinite;
+    animation: rock-data-v-6a0dcf10 3s ease-in infinite;
+    position: absolute;
+  }
+  .flower>div {
+      position: absolute;
+  }
+  .flower-top {
+      left: 0;
+      width: 2rem;
+      height: 2rem;
+      z-index: 2;
+  }
+  .flower-top::before {
+    width: .5rem;
+    height: .5rem;
+    background-color: #fae134;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    margin: -.25rem 0 0 -.25rem;
+    z-index: 20;
+    content: '';
+    position: absolute;
+}
+  .flower-top p {
+      position: absolute;
+      top: 50%;
+      margin-top: -.15rem;
+      width: 2rem;
+      height: .3rem;
+      background-color: palegreen;
+      border-radius: .4rem;
+  }
+  .flower-top p:nth-child(2) {
+      transform: rotate(45deg);
+      transform-origin: 50% 50%;
+  }
+  .flower-top p:nth-child(3) {
+      transform: rotate(90deg);
+      transform-origin: 50% 50%;
+  }
+  .flower-top p:nth-child(4) {
+      transform: rotate(135deg);
+      transform-origin: 50% 50%;
+  }
+    .flower-head {
+      bottom: 0;
+      left: 10%;
+      width: 1rem;
+      height: 3rem;
+      border: 3px solid #60ae34;
+      border-radius: 100% 0 0 100%/50%;
+      border-right: none;
+  }
+  .flower-head:before {
+      bottom: 1.3rem;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: .3rem solid transparent;
+      border-right: 0 solid transparent;
+      border-bottom: .4rem solid #64b033;
+      transform: skewX(-45deg);
+      content: '';
+      position: absolute;
+  }
+  .flower-head:after {
+      bottom: 1rem;
+      left: -.55rem;
+      width: 0;
+      height: 0;
+      border-left: .25rem solid transparent;
+      border-right: 0 solid transparent;
+      border-bottom: .7rem solid #64b033;
+      transform: skewX(45deg);
+      content: '';
+      position: absolute;
+  }
+}
+@keyframes rock{0%{transform:rotate(-5deg) translate3d(0,0,0)}
+50%{transform:rotate(5deg) translate3d(30%,0,0)}
+100%{transform:rotate(-5deg) translate3d(0,0,0)}}
+@-webkit-keyframes rock{0%{transform:rotate(-5deg) translate3d(0,0,0)}
+50%{transform:rotate(5deg) translate3d(30%,0,0)}
+100%{transform:rotate(-5deg) translate3d(0,0,0)}}
+.cloud {
+  width: 140px;
+  height: 1.85rem;
+  background: palevioletred;
+  border-radius: 3.15rem;
+  position: absolute;
+  top: 6.25rem;
+  right: 2.5rem;
+  -webkit-animation: moving-cloud 3s ease infinite;
+  animation: moving-cloud 3s ease infinite;
+}
+
+.cloud::before {
+  width: 3.75rem;
+  height: 3.75rem;
+  background: palevioletred;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: -2.5rem;
+  left: 1.25rem;
+}
+
+.cloud::after {
+  width: 3.15rem;
+  height: 3.15rem;
+  background: palevioletred;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  top: -1.85rem;
+  right: 1.55rem;
+}
+@-webkit-keyframes moving-cloud {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30%);
+  }
+}
+@keyframes moving-cloud {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-30%);
+  }
+}
+
 .size1 {
   box-shadow: 0 0.4rem 0.8rem -0.1rem rgba(0, 32, 128, .1), 0 0 0 1px #f0f2f7;
   padding: 20px;
