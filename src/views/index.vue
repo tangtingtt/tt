@@ -31,7 +31,7 @@ export default {
       headerList: [
         {name: '首页',code:'index',path: '/index'},
         {name: 'CSS效果',code:'css',path:'/cssIndex'},
-        {name: 'JS效果',code:'js',path:'/jsIndex'},
+        {name: 'JS方法',code:'js',path:'/jsIndex'},
         // {name: 'swiprt效果'},
         // {name: '博客',code:'index'},
         {name: '关于我',code:'about',path:'/about'}

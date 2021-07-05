@@ -73,6 +73,25 @@
 						<img src="@/assets/been.jpg"/>
 					</div>
     </div>
+    <div class="size1 tt14 relative">
+        <i class="icon"></i>
+    </div>
+    <div class="size1 tt15 relative overflow-hid">
+          <div class="pin"></div>
+          <div class="pulse"></div>
+          <audio controls="controls" style="display: none;"></audio></body>
+    </div>
+    <div class="size1 tt16 relative">
+          <img class="mike" src="https://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/stage-12/mike.png"/>
+          <div class="boat">
+            <img src="https://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/stage-12/boat.png" alt="tugboat">
+          </div>
+    </div>
+    <div class="size1 tt17 relative">
+      <!-- https://codepen.io/theigmo87/pen/cwHyK -->
+          <input type="checkbox" id="cbtest" />
+          <label for="cbtest" class="check-box"></label>
+    </div>
   </div>
 </template>
 
@@ -96,6 +115,280 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import '@/assets/css/color.scss';
+  @-moz-keyframes dothabottomcheck{
+      0% { height: 0; }
+      100% { height: 50px; }
+  }
+  @-webkit-keyframes dothabottomcheck{
+      0% { height: 0; }
+      100% { height: 50px; }
+  }
+  @keyframes dothabottomcheck{
+      0% { height: 0; }
+      100% { height: 50px;  }
+  }
+  @keyframes dothatopcheck{
+      0% { height: 0; }
+      50% { height: 0; }
+      100% { height: 120px; }
+  }
+  @-webkit-keyframes dothatopcheck{
+      0% { height: 0; }
+      50% { height: 0; }
+      100% { height: 120px; }
+  }
+  @-moz-keyframes dothatopcheck{
+      0% { height: 0; }
+      50% { height: 0; }
+      100% { height: 120px; }
+  }
+.tt17 {
+  input[type=checkbox]{
+      display:none;
+  }
+
+.check-box {
+    height: 100px;
+    width: 100px;
+    background-color: transparent;
+    border: 10px solid $unchecked-color;
+    border-radius: 5px;
+    position: relative;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    -moz-transition: border-color ease 0.2s;
+    -o-transition: border-color ease 0.2s;
+    -webkit-transition: border-color ease 0.2s;
+    transition: border-color ease 0.2s;
+    cursor:pointer;
+
+    &:before, &:after {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        position: absolute;
+        height: 0;
+        width: 20px;
+        background-color: $checked-color;
+        display: inline-block;
+        -moz-transform-origin: left top;
+        -ms-transform-origin: left top;
+        -o-transform-origin: left top;
+        -webkit-transform-origin: left top;
+        transform-origin: left top;
+        border-radius: 5px;
+        content: ' ';
+        -webkit-transition: opacity ease .5;
+        -moz-transition: opacity ease .5;
+        transition: opacity ease .5;
+    }
+
+    &:before {
+        top:72px;
+        left: 41px;
+        // box-shadow: 0 0 0 $checkbox-height * .05 $background-color;
+        -moz-transform: rotate(-135deg);
+        -ms-transform: rotate(-135deg);
+        -o-transform: rotate(-135deg);
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+    }
+
+    &:after {
+        top: 37px;
+        left: 5px;
+        -moz-transform: rotate(-45deg);
+        -ms-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+}
+
+input[type=checkbox]:checked + .check-box,
+.check-box.checked{
+    border-color:$checked-color;
+    
+    &:after{
+        height: 50px;
+        -moz-animation: dothabottomcheck 0.2s ease 0s forwards;
+        -o-animation: dothabottomcheck 0.2s ease 0s forwards;
+        -webkit-animation: dothabottomcheck 0.2s ease 0s forwards;
+        animation: dothabottomcheck 0.2s ease 0s forwards;
+    }
+     
+    &:before{
+        height: 120px;
+        -moz-animation: dothatopcheck 0.4s ease 0s forwards;
+        -o-animation: dothatopcheck 0.4s ease 0s forwards;
+        -webkit-animation: dothatopcheck 0.4s ease 0s forwards;
+        animation: dothatopcheck 0.4s ease 0s forwards;
+    }
+}
+}
+.tt16 {
+  background-color: $color-bule !important;
+  .mike {
+    -webkit-animation: mike-move 6s 6s ease-out forwards, mike-float 3.2s infinite;
+    animation: mike-move 6s 6s ease-out forwards, mike-float 3.2s infinite;
+    width: 100px;
+  }
+  .boat {
+    -webkit-animation: rock-boat 3s ease-in-out infinite;
+    animation: rock-boat 3s ease-in-out infinite;
+    img {
+      width:100%;
+    }
+    &:after {
+          content: "";
+          display: block;
+          width: 50px;
+          height: 50px;
+          background: url(https://treehouse-code-samples.s3.amazonaws.com/CSS-DD/codepen/stage-12/steam.png) no-repeat;
+          background-size: 50px;
+          position: absolute;
+          top: -32%;
+          left: -7%;
+          opacity: 0;
+    }
+  }
+  .boat::after {
+    -webkit-animation: steam 4s 2s infinite;
+    animation: steam 4s 2s infinite;
+  }
+}
+@-webkit-keyframes rock-boat {
+	50%  { -webkit-transform: rotate(-5deg) translateY(-10px); }
+}
+@keyframes rock-boat {
+	50%  { -webkit-transform: rotate(-5deg) translateY(-10px); }
+}
+@-webkit-keyframes steam {
+	40%,
+	60%  { opacity: .9; }
+	100% { -webkit-transform: translate(-15%, -35%) rotateZ(20deg); }
+}
+@keyframes steam {
+  40%,
+  60%  { opacity: .9; }
+	100% { -webkit-transform: translate(-15%, -35%) rotateZ(20deg); }
+}
+@-webkit-keyframes mike-move {
+	100% { left: 12%; }
+}
+@keyframes mike-move {
+	100% { left: 12%; }
+}
+@-webkit-keyframes mike-float {
+	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+}
+@keyframes mike-float {
+	50% { -webkit-transform: rotateZ(5deg) translateY(-5px); }
+}
+.tt15 {
+  .pin {
+    width: 30px;
+    height: 30px;
+    border-radius: 50% 50% 50% 0;
+    background: #89849b;
+    position: absolute;
+    transform: rotate(-45deg);
+    left: 50%;
+    top: 50%;
+    margin: -20px 0 0 -20px;
+    animation-name: bounce;
+    animation-fill-mode: both;
+    animation-duration: 1s;
+    &:after {
+      content: '';
+      width: 14px;
+      height: 14px;
+      margin: 8px 0 0 8px;
+      background: #2F2F2F;
+      position: absolute;
+      border-radius: 50%;
+      left: 0;
+    }
+  }
+.pulse {
+  background: rgba(0,0,0,0.2);
+  border-radius: 50%;
+  height: 14px;
+  width: 14px;
+  position:absolute;
+  left: 50%;
+  top: 50%;
+  margin: 11px 0px 0px -12px;
+  transform:rotateX(55deg);
+  z-index: 2;
+  &:after {
+    content: "";
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    margin:-13px 0 0 -20px;
+    animation:pulsate 1s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0.0;
+    box-shadow: 0 0 1px 2px #89849b;
+    animation-delay: 1.1s;
+  }
+}
+}
+ 
+
+@keyframes pulsate {
+  0%{
+    transform: scale(0.1, 0.1);
+    opacity: 0.0;
+  }
+  50% {
+    opacity: 1.0;
+  }
+  100% {
+    transform: scale(1.2, 1.2);
+    opacity: 0;
+  }
+    
+}
+@keyframes bounce {
+  0%{
+    opacity: 0;
+    transform: translateY(-200px) rotate(-45deg);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(30px) rotate(-45deg);
+  }
+    
+  80% {
+    transform: translateY(-10px) rotate(-45deg);
+  }
+    
+  100% {
+    transform: translateY(0) rotate(-45deg);
+  }
+    
+}
+
+.tt14 {
+  .icon {
+    background: url(data:image/png;base64,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) no-repeat;
+    width: 24px;
+    height: 24px;
+    background-size: 24px!important;
+    &:hover {
+      -webkit-transform: translateY(-4px);
+      transform: translateY(-4px);
+      -webkit-transition: all .2s linear 0s;
+      transition: all .2s linear 0s;
+    }
+  }
+}
 .tt13 {
   .bee {
       width: 22%;

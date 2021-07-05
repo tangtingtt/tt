@@ -12,10 +12,10 @@ export default {
 </script>
 
 <style>
+
 body {
   margin: 0;
   background: #f4f5f7;
-  /* cursor: url(./assets/teacher.png),pointer; */
 }
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;

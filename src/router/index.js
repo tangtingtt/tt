@@ -42,7 +42,7 @@ export default new Router({
           component: () => import('@/views/jsPage/index'),
           name: 'cssPage',
           meta: {
-            title: 'JS效果页',
+            title: 'JS方法页',
             noCache: true,
             activeMenu: 'js'
           }
