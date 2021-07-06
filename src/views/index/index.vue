@@ -24,7 +24,73 @@
       </div>
     </div>
     <div class="second-div">
-      
+      <p class="second-div-title">图片裁剪</p>
+      <div class="test test1">
+					<vueCropper
+						ref="cropper"
+						:img="option.img"
+						:outputSize="option.size"
+						:outputType="option.outputType"
+						:info="true"
+						:full="option.full"
+						:canMove="option.canMove"
+						:canMoveBox="option.canMoveBox"
+						:fixedBox="option.fixedBox"
+						:original="option.original"
+						:autoCrop="option.autoCrop"
+						:autoCropWidth="option.autoCropWidth"
+						:autoCropHeight="option.autoCropHeight"
+						:centerBox="option.centerBox"
+						:high="option.high"
+						:infoTrue="option.infoTrue"
+						@realTime="realTime"
+						@imgLoad="imgLoad"
+						@cropMoving="cropMoving"
+						:enlarge="option.enlarge"
+					></vueCropper>
+				</div>
+        <div class="test-button">
+					<button @click="changeImg" class="btn">切换图片</button>
+					<!-- <button @click="startCrop" v-if="!crap" class="btn">start</button>
+					<button @click="stopCrop" v-else class="btn">stop</button>
+					<button @click="clearCrop" class="btn">clear</button>
+					<button @click="refreshCrop" class="btn">refresh</button>
+					<button @click="changeScale(1)" class="btn">+</button>
+					<button @click="changeScale(-1)" class="btn">-</button>
+					<button @click="rotateLeft" class="btn">rotateLeft</button>
+					<button @click="rotateRight" class="btn">rotateRight</button>
+					<button @click="finish('base64')" class="btn">preview(base64)</button>
+					<button @click="finish('blob')" class="btn">preview(blob)</button> -->
+					<a @click="down('base64')" class="btn">下载图片(base64)</a>
+					<a @click="down('blob')" class="btn">下载图片(blob)</a>
+					<a :href="downImg" download="demo.png" ref="downloadDom"></a>
+				</div>
+
+        <div class="inline-block vertical-align-top">
+          <p>截图框大小</p>
+					<div class="show-preview" :style="{'width': previews.w + 'px', 'height': previews.h + 'px',  'overflow': 'hidden',
+							'margin': '5px'}">
+						<div :style="previews.div">
+							<img :src="previews.url" :style="previews.img">
+						</div>
+					</div>
+				</div>
+        <div class="inline-block vertical-align-top">
+					<p>中等大小</p>
+					<div :style="previewStyle1"> 
+						<div :style="previews.div">
+							<img :src="previews.url" :style="previews.img">
+						</div>
+					</div>
+        </div>
+        <div class="inline-block vertical-align-top">
+					<p>迷你大小</p>
+					<div :style="previewStyle2"> 
+						<div :style="previews.div">
+							<img :src="previews.url" :style="previews.img">
+						</div>
+					</div>
+        </div>
     </div>
     <div class="aplayer-div">
       <div style="width: 280px">
@@ -36,6 +102,7 @@
 
 <script>
 import aplayer from "vue-aplayer";
+import { VueCropper } from 'vue-cropper'
 export default {
   name: "FirstPage",
   data() {
@@ -68,16 +135,171 @@ export default {
         'Vscode中使用Git可视化面板管理代码仓库 - 视频教程',
         '计算器项目'
       ],
-      timer: null
+      timer: null,
+      lists: [
+        {
+          img: "https://avatars2.githubusercontent.com/u/15681693?s=460&v=4"
+        },
+        {
+          img: "http://cdn.xyxiao.cn/Landscape_2.jpg"
+        }
+      ],
+      model: false,
+      modelSrc: "",
+      crap: false,
+      previews: {},
+      option: {
+        img: "https://img0.baidu.com/it/u=3870964477,3746012709&fm=26&fmt=auto&gp=0.jpg",
+        size: 1,
+        full: false,
+        outputType: "png",
+        canMove: true,
+        fixedBox: false,
+        original: false,
+        canMoveBox: true,
+        autoCrop: true,
+        // 只有自动截图开启 宽度高度才生效
+        autoCropWidth: 200,
+        autoCropHeight: 150,
+        centerBox: false,
+        high: false,
+        cropData: {},
+				enlarge: 1,
+        mode: 'contain',
+        maxImgSize: 3000,
+        limitMinSize: [100, 120]
+      },
+      downImg: "#",
+      previewStyle1: {},
+      previewStyle2: {},
     };
   },
   components: {
     aplayer,
+    VueCropper
   },
   mounted() {
     this.roll()
   },
   methods: {
+    down(type) {
+      // event.preventDefault()
+      // 输出
+      if (type === "blob") {
+        this.$refs.cropper.getCropBlob(data => {
+          this.downImg = window.URL.createObjectURL(data);
+          if (window.navigator.msSaveBlob) {
+            var blobObject = new Blob([data]);
+            window.navigator.msSaveBlob(blobObject, "demo.png");
+          } else {
+            this.$nextTick(() => {
+              this.$refs.downloadDom.click();
+            });
+          }
+        });
+      } else {
+        this.$refs.cropper.getCropData(data => {
+          this.downImg = data;
+          if (window.navigator.msSaveBlob) {
+            var blobObject = new Blob([data]);
+            window.navigator.msSaveBlob(blobObject, "demo.png");
+          } else {
+            this.$nextTick(() => {
+              this.$refs.downloadDom.click();
+            });
+          }
+        });
+      }
+    },
+    finish(type) {
+      // 输出
+      // var test = window.open('about:blank')
+      // test.document.body.innerHTML = '图片生成中..'
+      if (type === "blob") {
+        this.$refs.cropper.getCropBlob(data => {
+          var img = window.URL.createObjectURL(data);
+          this.model = true;
+          this.modelSrc = img;
+        });
+      } else {
+        this.$refs.cropper.getCropData(data => {
+          this.model = true;
+          this.modelSrc = data;
+        });
+      }
+    },
+    changeScale(num) {
+      num = num || 1;
+      this.$refs.cropper.changeScale(num);
+    },
+    rotateLeft() {
+      this.$refs.cropper.rotateLeft();
+    },
+    rotateRight() {
+      this.$refs.cropper.rotateRight();
+    },
+    startCrop() {
+      // start
+      this.crap = true;
+      this.$refs.cropper.startCrop();
+    },
+    stopCrop() {
+      //  stop
+      this.crap = false;
+      this.$refs.cropper.stopCrop();
+    },
+    clearCrop() {
+      // clear
+      this.$refs.cropper.clearCrop();
+    },
+    refreshCrop() {
+      // clear
+      this.$refs.cropper.refresh();
+    },
+    changeImg() {
+      this.option.img = this.lists[0].img;
+    },
+    cropMoving(data) {
+      this.option.cropData = data;
+    },
+    imgLoad(msg) {
+      console.log(msg);
+    },
+    // 实时预览函数
+    realTime(data) {
+      var previews = data;
+      var h = 0.5;
+      var w = 0.2;
+      this.previewStyle1 = {
+        width: previews.w + "px",
+        height: previews.h + "px",
+        overflow: "hidden",
+        margin: "0",
+        zoom: h
+      };
+      this.previewStyle2 = {
+        width: previews.w + "px",
+        height: previews.h + "px",
+        overflow: "hidden",
+        margin: "0",
+        zoom: w
+      };
+      this.previewStyle3 = {
+        width: previews.w + "px",
+        height: previews.h + "px",
+        overflow: "hidden",
+        margin: "0",
+        zoom: (100 / previews.w)
+      };
+      this.previewStyle4 = {
+        width: previews.w + "px",
+        height: previews.h + "px",
+        overflow: "hidden",
+        margin: "0",
+        zoom: (100 / previews.h)        
+      };
+			this.previews = data;
+    },
     roll(t) {
       var ul1 = document.getElementById("comment1");
       var ul2 = document.getElementById("comment2");
@@ -114,6 +336,73 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+.cropper-content{
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-end;
+  .cropper-box{
+    flex: 1;
+    width: 100%;
+    .cropper{
+      width: auto;
+      height: 300px;
+    }
+  }
+
+  .show-preview{
+    flex: 1;
+    -webkit-flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    .preview{
+      overflow: hidden;
+      border:1px solid #67c23a;
+      background: #cccccc;
+    }
+  }
+}
+.footer-btn{
+  margin-top: 30px;
+  display: flex;
+  display: -webkit-flex;
+  justify-content: flex-end;
+  .scope-btn{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    padding-right: 10px;
+  }
+  .upload-btn{
+    flex: 1;
+    -webkit-flex: 1;
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+  }
+  .btn {
+    outline: none;
+    display: inline-block;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    -webkit-appearance: none;
+    text-align: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    outline: 0;
+    -webkit-transition: .1s;
+    transition: .1s;
+    font-weight: 500;
+    padding: 8px 15px;
+    font-size: 12px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #409EFF;
+    border-color: #409EFF;
+    margin-right: 10px;
+  }
+}
 .first-div {
   height: 250px;
   margin: 24px auto;
@@ -152,8 +441,36 @@ export default {
   margin: 0 auto;
   margin-bottom: 60px;
   padding: 0 8px;
-  height: 240px;
-  background: url(/static/img/2.4def7a7.jpg) 0 220px no-repeat;
+  .second-div-title {
+    color: #81c0a1;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  .test {
+      height: 300px;
+  }
+  .show-preview {
+    display: inline-block;
+  }
+  .test-button {
+    margin-top: 10px;
+    button {
+        background-color: #81c0a1;
+        border-color: #81c0a1;
+        color: #fff;
+        line-height: 25px;
+        border-radius: 7px;
+    }
+    a {
+      color: #81c0a1;
+      font-size: 13px;
+      margin: 9px;
+      cursor: pointer;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
 }
 .aplayer-div {
   position: fixed;
