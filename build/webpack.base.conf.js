@@ -35,16 +35,17 @@ module.exports = {
     extensions: ['.js', '.vue', '.json'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+      '@': resolve('src'), // 路径别名的设置，比如只要在src目录下的，我们用@来代替
     }
   },
   module: {
     rules: [
+      // 注释以下内容(bugfixed:main.js中引入.scss文件报错)
       // ...(config.dev.useEslint ? [createLintingRule()] : []),
-      {
-        test: /\.scss$/,
-        loader: 'sass-loader!style-loader!css-loader'
-      },
+      // {
+      //   test: /\.scss$/,
+      //   loader: 'sass-loader!style-loader!css-loader'
+      // },
       {
         test: /\.vue$/,
         loader: 'vue-loader',

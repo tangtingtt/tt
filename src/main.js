@@ -14,6 +14,13 @@ import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
 import './assets/css/common.scss';
 import './assets/css/font.scss';
+// 引入alloyfinger
+import AlloyFinger from 'alloyfinger'
+import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger_vue'
+ 
+Vue.use(AlloyFingerPlugin,{
+  AlloyFinger
+})
 
 
 Vue.use(vueAplayer)

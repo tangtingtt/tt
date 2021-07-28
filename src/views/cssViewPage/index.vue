@@ -92,6 +92,19 @@
           <input type="checkbox" id="cbtest" />
           <label for="cbtest" class="check-box"></label>
     </div>
+    <div class="size1 tt18 relative">
+     radial-gradient() 函数用径向渐变创建 "图像"。
+     farthest-side ：指定径向渐变的半径长度为从圆心到离圆心最远的边
+    </div>
+    <div class="size1 tt19 relative">
+      <i class="iconfont icon-jiantou-copy"></i>
+    </div>
+    <div class="size1 tt20 relative">
+      <i></i>
+    </div>
+    <div class="size1 tt21 relative">
+      <a>按钮</a>
+    </div>
   </div>
 </template>
 
@@ -143,6 +156,132 @@ export default {
       50% { height: 0; }
       100% { height: 120px; }
   }
+.tt21 {
+  a {
+    border: 1px solid #2dc7af;
+    background: #1fb29c;
+    background-image: -o-linear-gradient(90deg, #1fb29c 0%, #81D6A5 50%, #1fb29c 100%);
+    background-image: -moz-linear-gradient(90deg, #1fb29c 0%, #81D6A5 50%, #1fb29c 100%);
+    background-image: -webkit-linear-gradient(0deg, #1fb29c 0%, #81D6A5 50%, #1fb29c 100%);
+    background-image: -ms-linear-gradient(90deg, #1fb29c 0%, #81D6A5 50%, #1fb29c 100%);
+    background-image: linear-gradient(90deg, #1fb29c 0%, #81D6A5 50%, #1fb29c 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1fb29c', endColorstr='#81d6a5', GradientType=1);
+    background-size: 200% 100% !important;
+    background-position: 0% 50%;
+    margin: 0 auto 15px;
+    display: block;
+    width: 168px;
+    height: 42px;
+    border: none;
+    border-radius: 21px;
+    line-height: 42px;
+    text-align: center;
+    font-size: 16px;
+    color: #000000;
+    letter-spacing: 4px;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+    &:before {
+      width: 200%;
+      opacity: 1;
+      transition: none;
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      z-index: -1;
+      border-radius: 0 30px 0 0;
+      height: 100%;
+      background: #1fb29c;
+      background-image: -o-linear-gradient(90deg, #1fb29c 0%, #81D6A5 50%,#1fb29c 100%);
+      background-image: -moz-linear-gradient(90deg, #1fb29c 0%, #81D6A5 50%,#1fb29c 100%);
+      background-image: -webkit-linear-gradient(0deg, #1fb29c 0%, #81D6A5 50%,#1fb29c 100%);
+      background-image: -ms-linear-gradient(90deg, #1fb29c 0%, #81D6A5 50%,#1fb29c 100%);
+      background-image: linear-gradient(90deg, #1fb29c 0%, #81D6A5 50%,#1fb29c 100%);
+      background-size: 200% 100% !important;
+      background-position: 0% 50%;
+      animation: slide 1.5s forwards linear alternate-reverse infinite;
+      transition: .3s linear;
+    }
+  }
+}
+@keyframes slide{
+    from{
+        background-position: 0% 100%;
+    }
+    to{
+        background-position: 100% 100%;
+    }
+}
+.tt20 {
+  i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: rgba(243,127,98,1);
+    background: linear-gradient(45deg,rgba(243,127,98,1) 29%,rgba(247,162,107,1) 100%);
+    background: -webkit-linear-gradient(-45deg,rgba(243,127,98,1) 29%,rgba(247,162,107,1) 100%);
+    background: -moz-linear-gradient(45deg,rgba(243,127,98,1) 29%,rgba(247,162,107,1) 100%);
+    background: -ms-linear-gradient(45deg,rgba(243,127,98,1) 29%,rgba(247,162,107,1) 100%);
+    animation: twinkle .6s ease-in-out infinite alternate;
+    -webkit-animation: twinkle .6s ease-in-out infinite alternate;
+    -moz-animation: twinkle .6s ease-in-out infinite alternate;
+    -o-animation: twinkle .6s ease-in-out infinite alternate
+  }
+}
+@keyframes twinkle {
+    0% {
+        transform: scale(1);
+        -webkit-transform: scale(1);
+        -ms-transform: scale(1);
+        -o-transform: scale(1)
+    }
+
+    100% {
+        transform: scale(1.6);
+        -webkit-transform: scale(1.6);
+        -ms-transform: scale(1.6);
+        -o-transform: scale(1.6)
+    }
+}
+.tt19 {
+  i {
+    font-size: 24px;
+    color: #1296db;
+    animation: up-to-down2 1s ease-in-out infinite alternate;
+  }
+}
+@keyframes up-to-down2 {
+    0% {
+        transform: translateY(40px);
+        -webkit-transform: translateY(40px);
+        -ms-transform: translateY(40px);
+        -o-transform: translateY(40px)
+    }
+
+    100% {
+        transform: translateY(0px);
+        -webkit-transform: translateY(0px);
+        -ms-transform: translateY(0px);
+        -o-transform: translateY(0px)
+    }
+}
+.tt18 {
+  // background-image: radial-gradient(farthest-side,rgba(0,255,255,1) 0,rgba(0,0,231,1) 60%,rgba(231,231,0,1) 100%);
+  &:before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: radial-gradient(farthest-side,rgba(231,231,231,0) 0,rgba(231,231,231,0) 60%,rgba(231,231,231,1) 100%);
+    pointer-events: none;
+    z-index: 2;
+  }
+ 
+}
 .tt17 {
   input[type=checkbox]{
       display:none;

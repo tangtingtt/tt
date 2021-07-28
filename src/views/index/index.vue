@@ -92,6 +92,10 @@
 					</div>
         </div>
     </div>
+    <div class="third-div">
+      <div id="fingerPic">
+      </div>
+    </div>
     <div class="aplayer-div">
       <div style="width: 280px">
         <aplayer :music="videoUpload.music"></aplayer>
@@ -180,8 +184,38 @@ export default {
   },
   mounted() {
     this.roll()
+    let that = this;
+      let element = document.getElementById("fingerPic");
+      this.af = new AlloyFinger(element, {
+        rotate: function (evt) {
+          console.log("实现旋转");
+        },
+        pinch: function (evt) {
+          console.log("实现缩放");
+        },
+        pressMove: function (evt) {
+          console.log("实现移动");
+        },
+        tap: function (evt) {
+          console.log("单击");
+          //点按触发
+        },
+        doubleTap: function (e) {
+          console.log("双击");
+          //双击屏幕触发
+        },
+        longTap: function (e) {
+          console.log("长按");
+          //长按屏幕750ms触发
+        },
+        swipe: function (e) {
+          //e.direction代表滑动的方向
+          console.log("swipe" + e.direction);
+        },
+      })
   },
   methods: {
+  
     down(type) {
       // event.preventDefault()
       // 输出
