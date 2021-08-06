@@ -105,6 +105,16 @@
     <div class="size1 tt21 relative">
       <a>按钮</a>
     </div>
+    <div class="size1 tt22 relative">
+      <p>弹窗第一次打开效果</p>
+      <img src="../../assets/dialog-bg1.png" />
+    </div>
+    <div class="size1 tt23 relative">
+      <span>立减4元</span>
+    </div>
+    <div class="size1 tt24 relative" :class="[foldFlag?'fold':'']">
+      <i class="jdrank_nav_arrow" @click="fold()"></i>
+    </div>
   </div>
 </template>
 
@@ -113,7 +123,7 @@ export default {
   name: "cssPage",
   data() {
     return {
-
+      foldFlag:false
     };
   },
   components: {
@@ -122,7 +132,9 @@ export default {
   mounted() {
   },
   methods: {
-
+      fold() {
+        this.foldFlag = !this.foldFlag
+      }
   }
 };
 </script>
@@ -156,6 +168,106 @@ export default {
       50% { height: 0; }
       100% { height: 120px; }
   }
+.tt24 {
+  .jdrank_nav_arrow {
+      position: absolute;
+      top: 39%;
+      right: 42%;
+      width: 38px;
+      height: 34px;
+      background-color: #fff;
+      z-index: 2;
+      &:after {
+        content: "";
+        display: block;
+        width: 8px;
+        height: 8px;
+        border-top: 1px solid #666;
+        border-left: 1px solid #666;
+        -webkit-transform-origin: 50%;
+        transform-origin: 50%;
+        -webkit-transform: rotate(-135deg);
+        transform: rotate(-135deg);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -6px;
+        margin-left: -4px;
+        -webkit-transition: -webkit-transform .5s ease-in-out;
+        transition: -webkit-transform .5s ease-in-out;
+        transition: transform .5s ease-in-out;
+        transition: transform .5s ease-in-out,-webkit-transform .5s ease-in-out;
+    }
+  }
+}
+.fold {
+  .jdrank_nav_arrow {
+    &:after {
+      -webkit-transform: rotate(45deg) translate(2px,3px);
+      transform: rotate(45deg) translate(2px,3px);
+    }
+  }
+}
+.tt23 {
+  span {
+    height: 20px;
+    padding: 0 6px;
+    background: linear-gradient(126deg, #ff5b3e, #ff0707);
+    border-radius: 8px 8px 8px 1px;
+    font-size: 14px;
+    color: #fff;
+    line-height: 20px;
+    transform-origin: left bottom;
+    -webkit-animation: of_D4HAg 2.4s infinite;
+    animation: of_D4HAg 2.4s infinite;
+  }
+}
+@keyframes of_D4HAg {
+  0% {
+      -webkit-transform: scale(1) rotate(0);
+      transform: scale(1) rotate(0)
+  }
+
+  8% {
+      -webkit-transform: scale(.7) rotate(0);
+      transform: scale(.7) rotate(0)
+  }
+
+  20% {
+      -webkit-transform: scale(.81) rotate(-15deg);
+      transform: scale(.81) rotate(-15deg)
+  }
+
+  36% {
+      -webkit-transform: scale(.96) rotate(5deg);
+      transform: scale(.96) rotate(5deg)
+  }
+
+  40% {
+      -webkit-transform: scale(1) rotate(0);
+      transform: scale(1) rotate(0)
+  }
+}
+.tt22 {
+  img {
+    width: 50%;
+    display: inline-block;
+    -webkit-animation: _2-3BqKpw .2s;
+    animation: _2-3BqKpw .2s;
+  }
+}
+@keyframes _2-3BqKpw{
+   0% {
+      -webkit-transform: scale(.6);
+      transform: scale(.6);
+      opacity: .5;
+  }
+  100% {
+      -webkit-transform: scale(1);
+      transform: scale(1);
+      opacity: 1;
+  }
+}
 .tt21 {
   a {
     border: 1px solid #2dc7af;
