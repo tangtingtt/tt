@@ -115,6 +115,15 @@
     <div class="size1 tt24 relative" :class="[foldFlag?'fold':'']">
       <i class="jdrank_nav_arrow" @click="fold()"></i>
     </div>
+    <div class="size1 tt25 relative">
+      <img src="../../assets/zp_small.gif" />
+    </div>
+    <div class="size1 tt26 relative">
+      <div class="now-buy-btn">立即抢购<div class="_4Y0Qtm_k"></div></div>
+    </div>
+    <div class="size1 tt27 relative">
+      <img src="../../assets/love.png"/>
+    </div>
   </div>
 </template>
 
@@ -168,6 +177,108 @@ export default {
       50% { height: 0; }
       100% { height: 120px; }
   }
+.tt27 {
+  img {
+    width:30%;
+    transform-origin: center bottom;
+    -webkit-animation: of_D4HAg 2.4s infinite;
+    animation: of_D4HAg 2.4s infinite;
+  }
+}
+@keyframes of_D4HAg {
+   0% {
+       -webkit-transform: scale(1) rotate(0);
+       transform: scale(1) rotate(0)
+   }
+ 
+   8% {
+       -webkit-transform: scale(.7) rotate(0);
+       transform: scale(.7) rotate(0)
+   }
+ 
+   20% {
+       -webkit-transform: scale(.81) rotate(-15deg);
+       transform: scale(.81) rotate(-15deg)
+   }
+ 
+   36% {
+       -webkit-transform: scale(.96) rotate(5deg);
+       transform: scale(.96) rotate(5deg)
+   }
+ 
+   40% {
+       -webkit-transform: scale(1) rotate(0);
+       transform: scale(1) rotate(0)
+   }
+ }
+.tt26 {
+  .now-buy-btn {
+    background: #F34A30;
+    border-radius: 19px;
+    color: #fff;
+    width: 40%;
+    font-size: 14px;
+    line-height: 24px;
+    margin: 0 auto;
+    position: relative;
+  }
+  ._4Y0Qtm_k {
+    position: absolute;
+    left: -4px;
+    top: 0;
+    width: 20px;
+    height: 100%;
+    background: url("../../assets/btn-line.png") no-repeat;
+    background-size: 100% 100%;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-name: _32OZEz0v;
+            animation-name: _32OZEz0v;
+    -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+    -webkit-animation-timing-function: ease-in;
+            animation-timing-function: ease-in;
+  }
+}
+@keyframes _32OZEz0v {
+   0% {
+      left: -4px;
+    }
+  
+    40% {
+      left: 100%;
+    }
+  
+    100% {
+      left: 100%;
+    }
+ }
+.tt25 {
+  img {
+    animation:finalhbshake;
+    -webkit-animation:finalhbshake;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    -webkit-animation-iteration-count: infinite;
+    width:55px;
+	  border-radius:5px;
+  }
+}
+@keyframes finalhbshake{
+    0%{transform:rotate(0deg)}
+    20%{transform:rotate(30deg)}
+    40%{transform:rotate(-30deg)}
+    60%{transform:rotate(0deg)}
+    100%{transform:rotate(0deg)}
+}
+@-webkit-keyframes finalhbshake{
+    0%{transform:rotate(0deg)}
+    20%{transform:rotate(30deg)}
+    40%{transform:rotate(-30deg)}
+    60%{transform:rotate(0deg)}
+    100%{transform:rotate(0deg)}
+}
 .tt24 {
   .jdrank_nav_arrow {
       position: absolute;
