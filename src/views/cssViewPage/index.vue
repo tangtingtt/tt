@@ -124,6 +124,9 @@
     <div class="size1 tt27 relative">
       <img src="../../assets/love.png"/>
     </div>
+    <div class="size1 tt28 relative">
+      <img src="../../assets/water.png"/>
+    </div>
   </div>
 </template>
 
@@ -177,6 +180,23 @@ export default {
       50% { height: 0; }
       100% { height: 120px; }
   }
+.tt28 {
+  background-color: palegoldenrod !important;
+  img {
+    animation: upAndDown 1.5s linear infinite alternate;
+  }
+}
+@keyframes upAndDown {
+    0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0)
+    }
+
+    to {
+        -webkit-transform: translateY(-14%);
+        transform: translateY(-14%)
+    }
+}
 .tt27 {
   img {
     width:30%;
