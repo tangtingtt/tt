@@ -127,6 +127,22 @@
     <div class="size1 tt28 relative">
       <img src="../../assets/water.png"/>
     </div>
+    <div class="size1 tt29 relative">
+      <div class="water-wrap">
+        <div class="collect-bean">
+          <div class="abs-bean ani1"></div>
+          <div class="abs-bean ani2"></div>
+          <div class="abs-bean ani3"></div>
+          <div class="abs-bean ani4"></div>
+          <div class="abs-bean ani5"></div>
+        </div>
+        <div>
+          <div class="water-wave">
+            <div class="value">74</div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -180,6 +196,152 @@ export default {
       50% { height: 0; }
       100% { height: 120px; }
   }
+.tt29 {
+  .water-wrap {
+    position: relative;
+  }
+  .collect-bean {
+    width: 100%;
+    height: 68px;
+    position: absolute;
+    top: -52px;
+    left:10px;
+    .abs-bean {
+      border: 1px solid #16e3e8;
+      border-radius: 50%
+    }
+    .ani1 {
+        width: 8px;
+        height: 8px;
+        box-shadow: inset 0 0 2px #16e3e8;
+        -webkit-animation: slideInDown1 1.5s linear infinite;
+        animation: slideInDown1 1.5s linear infinite;
+    }
+    .ani2{
+        width: 10px;
+        height: 10px;
+        box-shadow: inset 0 0 4px #16e3e8;
+        margin-left:37px;
+        margin-top: -1px;
+        -webkit-animation: slideInDown2 1.3s linear infinite;
+        animation: slideInDown2 1.3s linear infinite
+    }
+    .ani3{
+      width:14px;
+      height: 14px;
+      box-shadow: inset 0 0 1px #16e3e8;
+      margin-left: 10px;
+      margin-top: -26px;
+      -webkit-animation: slideInDown3 1.7s linear infinite;
+      animation: slideInDown3 1.7s linear infinite
+    }
+    .ani4 {
+       width: 13px;
+      height: 13px;
+      -webkit-box-shadow: inset 0 0 4px #16e3e8;
+      box-shadow: inset 0 0 4px #16e3e8;
+      margin-left: 14px;
+      margin-top: 3px;
+      -webkit-animation: slideInDown4-data-v-6a0dcf10 1.6s linear infinite;
+      animation: slideInDown4-data-v-6a0dcf10 1.6s linear infinite;
+    }
+    .ani5 {
+        width: 11px;
+      height: 11px;
+      -webkit-box-shadow: inset 0 0 8px #16e3e8;
+      box-shadow: inset 0 0 4px #16e3e8;
+      margin-left: 29px;
+      margin-top: -10px;
+      -webkit-animation: slideInDown5-data-v-6a0dcf10 1.8s linear infinite;
+      animation: slideInDown5-data-v-6a0dcf10 1.8s linear infinite;
+    }
+  }
+  .water-wave {
+    position: relative;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    overflow: hidden;
+    .value {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      background: url('../../assets/qiu.png') no-repeat;
+      background-size: 100% 100%;
+      top: 50%;
+      left: 50%;
+      -webkit-transform: translate(-50%,-50%);
+      transform: translate(-50%,-50%);
+      font-size:12px;
+      font-family: PingFangSC-Medium;
+      text-align: center;
+      color: #fff;
+      line-height: 52px;
+      // line-height: 4.53vw;
+      // padding-top: 4.53vw;
+    }
+  }
+}
+@keyframes slideInDown1 {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translate3d(0,50px,0);
+        transform: translate3d(0,50px,0)
+    }
+}
+@keyframes slideInDown2 {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translate3d(0,50px,0);
+        transform: translate3d(0,50px,0)
+    }
+}
+@keyframes slideInDown3 {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translate3d(0,50px,0);
+        transform: translate3d(0,50px,0)
+    }
+}
+@keyframes slideInDown4 {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translate3d(0,50px,0);
+        transform: translate3d(0,50px,0)
+    }
+}
+@keyframes slideInDown5 {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+        visibility: visible
+    }
+
+    to {
+        -webkit-transform: translate3d(0,50px,0);
+        transform: translate3d(0,50px,0)
+    }
+}
 .tt28 {
   background-color: palegoldenrod !important;
   img {
