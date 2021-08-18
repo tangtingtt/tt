@@ -143,6 +143,9 @@
         </div>
       </div>
     </div>
+    <div class="size1 tt30 relative">
+      <img src="../../assets/hb.png"/>
+    </div>
   </div>
 </template>
 
@@ -196,6 +199,116 @@ export default {
       50% { height: 0; }
       100% { height: 120px; }
   }
+.tt30 {
+  img {
+    width: 24px;
+    -webkit-animation: rotateRedPacket-jsx-3107098372 2s steps(1) 0s infinite normal none;
+    animation: rotateRedPacket-jsx-3107098372 2s steps(1) 0s infinite normal none;
+  }
+}
+@keyframes rotateRedPacket-jsx-3107098372 {
+  0% {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+
+  2% {
+      -webkit-transform: rotate(-6.5deg);
+      -ms-transform: rotate(-6.5deg);
+      transform: rotate(-6.5deg);
+  }
+
+  4% {
+      -webkit-transform: rotate(-13deg);
+      -ms-transform: rotate(-13deg);
+      transform: rotate(-13deg);
+  }
+
+  6% {
+      -webkit-transform: rotate(-7.8deg);
+      -ms-transform: rotate(-7.8deg);
+      transform: rotate(-7.8deg);
+  }
+
+  8% {
+      -webkit-transform: rotate(-2.6deg);
+      -ms-transform: rotate(-2.6deg);
+      transform: rotate(-2.6deg);
+  }
+
+  10% {
+      -webkit-transform: rotate(2.6deg);
+      -ms-transform: rotate(2.6deg);
+      transform: rotate(2.6deg);
+  }
+
+  12% {
+      -webkit-transform: rotate(7.8deg);
+      -ms-transform: rotate(7.8deg);
+      transform: rotate(7.8deg);
+  }
+
+  14% {
+      -webkit-transform: rotate(13deg);
+      -ms-transform: rotate(13deg);
+      transform: rotate(13deg);
+  }
+
+  16% {
+      -webkit-transform: rotate(7.8deg);
+      -ms-transform: rotate(7.8deg);
+      transform: rotate(7.8deg);
+  }
+
+  18% {
+      -webkit-transform: rotate(2.6deg);
+      -ms-transform: rotate(2.6deg);
+      transform: rotate(2.6deg);
+  }
+
+  20% {
+      -webkit-transform: rotate(-2.6deg);
+      -ms-transform: rotate(-2.6deg);
+      transform: rotate(-2.6deg);
+  }
+
+  22% {
+      -webkit-transform: rotate(-7.8deg);
+      -ms-transform: rotate(-7.8deg);
+      transform: rotate(-7.8deg);
+  }
+
+  24% {
+      -webkit-transform: rotate(-13deg);
+      -ms-transform: rotate(-13deg);
+      transform: rotate(-13deg);
+  }
+
+  26% {
+      -webkit-transform: rotate(-8.67deg);
+      -ms-transform: rotate(-8.67deg);
+      transform: rotate(-8.67deg);
+  }
+
+  28% {
+      -webkit-transform: rotate(-4.33deg);
+      -ms-transform: rotate(-4.33deg);
+      transform: rotate(-4.33deg);
+  }
+
+  30% {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+
+  100% {
+      -webkit-transform: rotate(0deg);
+      -ms-transform: rotate(0deg);
+      transform: rotate(0deg);
+  }
+}
 .tt29 {
   .water-wrap {
     position: relative;
