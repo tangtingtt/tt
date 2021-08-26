@@ -146,6 +146,13 @@
     <div class="size1 tt30 relative">
       <img src="../../assets/hb.png"/>
     </div>
+    <div class="size1 tt31 relative">
+      <img src="../../assets/light.png"/>
+    </div>
+    <div class="size1 tt32 relative">
+      <img src="../../assets/home_guide_flash.png" class="img1"/>
+      <img src="../../assets/home_guide_finger.png" class="img2"/>
+    </div>
   </div>
 </template>
 
@@ -199,6 +206,62 @@ export default {
       50% { height: 0; }
       100% { height: 120px; }
   }
+@keyframes piggyFingerFlash {
+    0% {
+        opacity: 0
+    }
+
+    66.66% {
+        opacity: 1
+    }
+
+    to {
+        opacity: 1
+    }
+}
+@keyframes piggyFingerIcon {
+    0% {
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0)
+    }
+
+    to {
+        -webkit-transform: translate3d(.1rem,.1rem,0);
+        transform: translate3d(.1rem,.1rem,0)
+    }
+}
+.tt32 {
+    background-color: #2d9ee0 !important;
+    img {
+      width:30%;
+    }
+    .img1 {
+      animation: piggyFingerFlash .5s ease-in-out 0s infinite;
+      margin-bottom: 30%;
+      margin-right: -14%;
+    }
+    .img2 {
+      animation: piggyFingerIcon .5s ease-in-out 0s infinite;
+    }
+}
+@keyframes treasure-box-light {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg)
+    }
+}
+.tt31 {
+  img {
+    width: 100%;
+    -webkit-animation: treasure-box-light 12s linear infinite;
+    animation: treasure-box-light 12s linear infinite;
+  }
+}
 .tt30 {
   img {
     width: 24px;
