@@ -153,6 +153,25 @@
       <img src="../../assets/home_guide_flash.png" class="img1"/>
       <img src="../../assets/home_guide_finger.png" class="img2"/>
     </div>
+    <div class="size1 tt33 relative">
+      <div class="img-box">
+        <div class="img1"><img src="../../assets/goods.png"/></div>
+        <div class="img2"><img src="../../assets/goods2.png"/></div>
+      </div>
+    </div>
+    <div class="size1 tt34 relative">
+      <div class="all-wrap">
+        <div class="all">
+          <div class="yarn"></div>
+        </div>
+      </div>
+    </div>
+    <div class="size1 tt35 relative">
+      <div class="heart"></div>
+    </div>
+    <div class="size1 tt36 relative">
+      <div class="star"></div>
+    </div>
   </div>
 </template>
 
@@ -229,6 +248,245 @@ export default {
         -webkit-transform: translate3d(.1rem,.1rem,0);
         transform: translate3d(.1rem,.1rem,0)
     }
+}
+@keyframes animateCls_ltart_1630028639150_A{
+  0.00%{ transform:scaleX(0);opacity:0 }
+  40.38%{ transform:scaleX(0);opacity:0 }
+  45.19%{ transform:scaleX(0);opacity:0 }
+  50.00%{ transform:scaleX(1);opacity:1 }
+  90.38%{ transform:scaleX(1);opacity:1 }
+  95.19%{ transform:scaleX(0);opacity:0 }
+  100.00%{ transform:scaleX(0);opacity:0 }
+}
+@keyframes animateCls_ltart_1630028639154_A{
+  0.00%{ transform:scaleX(1);opacity:1 }
+  40.38%{ transform:scaleX(1);opacity:1 }
+  45.19%{ transform:scaleX(0);opacity:0 }
+  50.00%{ transform:scaleX(0);opacity:0 }
+  90.38%{ transform:scaleX(0);opacity:0 }
+  95.19%{ transform:scaleX(0);opacity:0 }
+  100.00%{ transform:scaleX(1);opacity:1 }
+}
+@keyframes bob {
+  0% {
+    transform: translateY(6px);
+  }
+  6.25% {
+    transform: translateY(-6px);
+  }
+  12.5% {
+    transform: translateY(6px);
+  }
+  18.75% {
+    transform: translateY(-6px);
+  }
+  25% {
+    transform: translateY(6px);
+  }
+  31.25% {
+    transform: translateY(-6px);
+  }
+  37.5% {
+    transform: translateY(6px);
+  }
+  43.75% {
+    transform: translateY(-6px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+  56.25% {
+    transform: translateY(-6px);
+  }
+  62.5% {
+    transform: translateY(6px);
+  }
+  68.75% {
+    transform: translateY(-6px);
+  }
+  75% {
+    transform: translateY(6px);
+  }
+  81.25% {
+    transform: translateY(-6px);
+  }
+  87.5% {
+    transform: translateY(6px);
+  }
+  93.75% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(6px);
+  }
+}
+@keyframes swing {
+  0% {
+    transform: rotate(5deg);
+  }
+  12.5% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  37.5% {
+    transform: rotate(-15deg);
+  }
+  50% {
+    transform: rotate(23deg);
+  }
+  62.5% {
+    transform: rotate(-23deg);
+  }
+  75% {
+    transform: rotate(15deg);
+  }
+  87.5% {
+    transform: rotate(-10deg);
+  }
+  100% {
+    transform: rotate(5deg);
+  }
+}
+@keyframes beat {
+    0% {
+        transform: translate(580%,-20%) rotate(45deg)scale(1.2)
+    }
+
+    10% {
+        transform: translate(580%,-20%) rotate(45deg)scale(1.3)
+    }
+
+    20% {
+        transform: translate(580%,-20%) rotate(45deg)scale(1.4)
+    }
+}
+@keyframes twinkle2 {
+    0% {
+        -webkit-transform: rotate(0deg) scale(0);
+        transform: rotate(0deg) scale(0)
+    }
+
+    50% {
+        -webkit-transform: rotate(540deg) scale(1.2);
+        transform: rotate(540deg) scale(1.2)
+    }
+
+    100% {
+        -webkit-transform: rotate(1080deg) scale(0);
+        transform: rotate(1080deg) scale(0)
+    }
+}
+.tt36 {
+  background-color: pink !important;
+  .star {
+    position: absolute;
+    right: 46%;
+    top: 41%;
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    -webkit-clip-path: polygon(20% 87%,50% 66%,80% 87%,67% 54%,96% 35%,60% 35%,50% 5%,40% 35%,4% 35%,33% 54%);
+    clip-path: polygon(20% 87%,50% 66%,80% 87%,67% 54%,96% 35%,60% 35%,50% 5%,40% 35%,4% 35%,33% 54%);
+    -webkit-animation: twinkle2 2s infinite;
+    animation: twinkle2 2s infinite;
+  }
+}
+.tt35 {
+  .heart {
+      width: 32px;
+      height: 32px;
+      background-color: #ff3838;
+      transform: translate(580%,-20%) rotate(45deg);
+      animation: beat 1s linear infinite;
+          position: absolute;
+      left: -82px;
+  }
+
+  .heart:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FF3838;
+      border-radius: 50px;
+      transform: translateY(-50%)
+  }
+
+  .heart:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #FF3838;
+      border-radius: 50px;
+      transform: translateX(-50%)
+  }
+}
+.tt34 {
+  background-color: black !important;
+  position: relative;
+  overflow: hidden;
+  .all-wrap {
+    position: absolute;
+    top:-6px;
+    -webkit-animation: bob 7s cubic-bezier(0.5, 0, 0.5, 1) infinite both;
+    animation: bob 7s cubic-bezier(0.5, 0, 0.5, 1) infinite both;
+  }
+  .all {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    // transform-origin: center -20rem;
+    // -webkit-animation: swing 7s cubic-bezier(0.5, 0, 0.5, 1) infinite both;
+    // animation: swing 7s cubic-bezier(0.5, 0, 0.5, 1) infinite both;
+    &:before {
+      position: absolute;
+      height: 60px;
+      width: 2px;
+      background-color: #DB242A;
+      left: 46%;
+      content:'';
+      top:0;
+    }
+    .yarn {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-image: radial-gradient(circle at top left, #e97c7f, #DB242A 50%, #af1d22);
+      top: 50px;
+      margin-left: -6px;
+    }
+  }
+}
+.tt33 {
+  .img-box {
+    position: relative;
+    width:100px;
+    height: 100px;
+    div {
+      left: 0;
+      top:0;
+      position: absolute;
+      height: 100px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  .img1 {
+    animation: animateCls_ltart_1630028639150_A 5200ms linear 0ms infinite;
+  }
+  .img2 {
+    animation: animateCls_ltart_1630028639154_A 5200ms linear 0ms infinite;
+  }
 }
 .tt32 {
     background-color: #2d9ee0 !important;
