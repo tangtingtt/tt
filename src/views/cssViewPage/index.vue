@@ -172,6 +172,30 @@
     <div class="size1 tt36 relative">
       <div class="star"></div>
     </div>
+    <div class="size1 tt37 relative">
+      <img src="../../assets/hb2.png"/>
+    </div>
+    <div class="size1 tt38 relative">
+      <img src="../../assets/lq.png" class="lq"/>
+      <img src="../../assets/finger2.png" class="finger2"/>
+    </div>
+    <div class="size1 tt39 relative">
+      <img src="../../assets/apple.png" class="apple"/>
+    </div>
+    <div class="size1 tt40 relative">
+      <div class="relative btn" >
+        <img src="../../assets/btn.png"/>
+        <div class="point-box">
+          <div class="_2JdrB1OO"></div>
+        </div>
+      </div>
+    </div>
+    <div class="size1 tt41 relative">
+      <div class="door">
+          <div class="left"></div>
+          <div class="right"></div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -198,6 +222,7 @@ export default {
 
 <style scoped lang="scss">
 @import '@/assets/css/color.scss';
+@import '@/assets/css/animation.scss';
   @-moz-keyframes dothabottomcheck{
       0% { height: 0; }
       100% { height: 50px; }
@@ -377,6 +402,143 @@ export default {
         -webkit-transform: rotate(1080deg) scale(0);
         transform: rotate(1080deg) scale(0)
     }
+}
+@keyframes hob_shake {
+    15%, 45%{
+        -webkit-transform: rotate(3deg);
+        transform: rotate(3deg);
+        transform-origin: 50% 100%; 
+    }
+    30%{
+        -webkit-transform: rotate(-3deg);
+        transform: rotate(-3deg);
+        transform-origin: 50% 100%;
+    }
+    60% ,100%{
+    	-webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+        transform-origin: 50% 100%;
+    }
+}
+.tt41 {
+  .door {
+    width: 150px;
+    height: 150px;
+    margin: 100px auto;
+    border: 1px solid gray;
+    perspective: 500px;
+    background-color:pink;
+    position: relative;
+    div {
+      box-sizing: border-box;
+      border: 1px solid black;
+    }
+    .left,.right {
+        float: left;
+        width: 50%;
+        height: 100%;
+        background-color: brown;
+        transition: 1s;
+        position: relative;
+        opacity: 1;
+    }
+    .left{
+        transform-origin: left center;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-10px);
+            border: 1px solid whitesmoke;
+            right: 0;
+        }
+    }
+    .right{
+        transform-origin: right center;
+        &:before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            top: 50%;
+            transform: translateY(-10px);
+            border: 1px solid whitesmoke;
+            left: 0;
+        }
+    }
+    &:hover .left {
+        transform: rotateY(-130deg);
+        // opacity: 0;
+    }
+    &:hover .right {
+        transform: rotateY(130deg);
+        // opacity: 0;
+    }
+  }
+}
+.tt40 {
+  .btn {
+    width: 80%;
+  }
+  .point-box {
+    height: 86%;
+    width: 80%;
+    overflow: hidden;
+    position: absolute;
+    top: 7%;
+    left: 10%;
+  }
+  ._2JdrB1OO {
+    width: 100%;
+    height: 734px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    background-size: 100% 734px;
+    animation-fill-mode: forwards;
+    background-image: url(../../assets/point.png);
+    -webkit-animation: _3e3H9AGX 1s steps(7) infinite;
+    animation: _3e3H9AGX 1s steps(7) infinite;
+  }
+}
+.tt39 {
+  .apple {
+    width: 42%;
+    -webkit-transform-origin: center top;
+    transform-origin: center top;
+    -webkit-animation: _1Ct4LnY 4s linear infinite;
+    animation: _1Ct4LnY 4s linear infinite;
+  }
+}
+.tt38 {
+  .lq {
+      width: 42%;
+      -webkit-animation: _2m2BE .8s ease-out infinite;
+      animation: _2m2BE .8s ease-out infinite;
+  }
+  .finger2 {
+    width: 18%;
+    position: absolute;
+    right: 28%;
+    bottom: 20%;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-transform-origin: 90% 90%;
+    transform-origin: 90% 90%;
+    -webkit-animation-name: finger-moving-animation;
+    animation-name: finger-moving-animation
+  }
+}
+.tt37 {
+  img {
+    width: 64px;
+    animation: hob_shake 1s infinite;
+  }
 }
 .tt36 {
   background-color: pink !important;
