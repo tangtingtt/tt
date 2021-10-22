@@ -51,3 +51,106 @@
         background-position:0 -734px;
     }
 }
+@keyframes flight {
+	100% {
+		-webkit-transform: translate(20px, 30px) rotate(-4deg);
+		-moz-transform: translate(20px, 30px);
+		-ms-transform: translate(20px,30px);
+		-o-transform: translate(20px, 30px);
+		transform: translate(20px, 30px)
+	}
+	66% {
+		-webkit-transform: translate(-15px, -25px) rotate(5deg);
+		-moz-transform: translate(-15px, -25px) rotate(5deg);
+		-ms-transform: translate(-15px, -25px) rotate(5deg);
+		-o-transform: translate(-15px, -25px) rotate(5deg);
+		transform: translate(-15px, -25px) rotate(5deg)
+	}
+	36% {
+		-webkit-transform: translate(25px, 20px) rotate(-6deg);
+		-moz-transform: translate(25px, 20px) rotate(-6deg);
+		-ms-transform: translate(25px, 20px) rotate(-6deg);
+		-o-transform: translate(25px, 20px) rotate(-6deg);
+		transform: translate(25px, 20px) rotate(-6deg)
+	}
+	0% {
+		-webkit-transform: translate(-20px, -15px) rotate(5deg);
+		-moz-transform: translate(-20px, -15px) rotate(5deg);
+		-ms-transform: translate(-20px, -15px) rotate(5deg);
+		-o-transform: translate(-20px, -15px) rotate(5deg);
+		transform: translate(-20px, -15px) rotate(5deg)
+	}
+}
+@keyframes ball-scale-ripple {
+    0% {
+        -webkit-transform: scale(0.1);
+                transform: scale(0.1);
+        opacity: 1; }
+    
+      70% {
+        -webkit-transform: scale(1);
+                transform: scale(1);
+        opacity: 0.7; }
+    
+      100% {
+        opacity: 0.0; 
+    }
+}
+@keyframes startLeft {
+    0% {
+        width: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        left:  16px;
+    }
+    10% {
+        width: 15px;
+    }
+    30% {
+        width: 30px;
+        left: 20px;
+    }
+    50% {
+        left: 30px;
+    }
+    70% {
+        opacity: .8;
+        left: 20px;
+    }
+    100% {
+        width: 15px;
+        -webkit-transform: translateY(-160px);
+        transform: translateY(-160px);
+        opacity: 0;
+        left: 0;
+    }
+}
+@keyframes startRight {
+    0% {
+        width: 0;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+        right:  16px;
+    }
+    10% {
+        width: 15px;
+    }
+    30% {
+        width: 30px;
+        right: 20px;
+    }
+    50% {
+        right: 30px;
+    }
+    70% {
+        opacity: .8;
+        right: 20px;
+    }
+    100% {
+        width: 15px;
+        -webkit-transform: translateY(-160px);
+        transform: translateY(-160px);
+        opacity: 0;
+        right: 0;
+    }
+}

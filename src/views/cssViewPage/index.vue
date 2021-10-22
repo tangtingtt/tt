@@ -196,6 +196,37 @@
           <div class="right"></div>
       </div>
     </div>
+    <div class="size1 tt42 relative">
+      <img src="../../assets/rocket.png"/>
+    </div>
+    <div class="size1 tt43 relative">
+      <span class="loader-inner ball-scale-ripple">
+          <span></span>
+      </span>
+    </div>
+    <div class="size1 tt44 relative">
+      <ul class="slider">
+        <li class="slider-item slider-item0">
+          <img src="../../assets/live-1.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+        </li>
+        <li class="slider-item slider-item1">
+          <img src="../../assets/live-2.png" data-mst-type="img" alt="图片"  lazy="loaded" style="">
+        </li>
+        <li class="slider-item slider-item2">
+          <img src="../../assets/live-3.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+        </li>
+        <li class="slider-item slider-item3">
+          <img src="../../assets/live-4.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+        </li>
+        <li class="slider-item slider-item4">
+          <img src="../../assets/live-5.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+        </li>
+        <li class="slider-item slider-item5">
+          <img src="../../assets/live-6.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+        </li>
+      </ul>
+      <img src="../../assets/live.png" class="live-icon"/>
+    </div>
   </div>
 </template>
 
@@ -419,6 +450,112 @@ export default {
         transform: rotate(0deg);
         transform-origin: 50% 100%;
     }
+}
+.tt44 {
+  align-items: end !important;
+  .live-icon {
+    width: 34px;
+  }
+  ul {
+    list-style: none;
+    position: absolute;
+    bottom: 20%;
+  }
+  .slider-item {
+    width: 0;
+    position: absolute;
+    -webkit-animation-duration: 3s;
+    animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    img {
+      width: 100%;
+    }
+  }
+  .slider-item0 {
+    webkit-animation-delay: -3.5s;
+    animation-delay: -3.5s;
+    -webkit-animation-name: startLeft;
+    animation-name: startLeft;
+    img {
+      -webkit-transform: rotate(-15deg);
+      transform: rotate(-15deg);
+    }
+  }
+  .slider-item1 {
+    -webkit-animation-delay: -2.5s;
+    animation-delay: -2.5s;
+    -webkit-animation-name: startRight;
+    animation-name: startRight;
+    img {
+      -webkit-transform: rotate(40deg);
+      transform: rotate(40deg);
+    }
+  }
+  .slider-item2 {
+    -webkit-animation-delay: -2s;
+    animation-delay: -2s;
+    -webkit-animation-name: startRight;
+    animation-name: startRight;
+    img {
+      -webkit-transform: rotate(-30deg);
+      transform: rotate(-30deg);
+    }
+  }
+  .slider-item3 {
+    -webkit-animation-delay: -1.5s;
+    animation-delay: -1.5s;
+    -webkit-animation-name: startLeft;
+    animation-name: startLeft;
+    img {
+      -webkit-transform: rotate(30deg);
+      transform: rotate(30deg);
+    }
+  }
+  .slider-item4 {
+      -webkit-animation-delay: -1s;
+      animation-delay: -1s;
+      -webkit-animation-name: startLeft;
+      animation-name: startLeft;
+    img {
+      -webkit-transform: rotate(-10deg);
+      transform: rotate(-10deg);
+    }
+  }
+  .slider-item5 {
+    -webkit-animation-delay: -.5s;
+    animation-delay: -.5s;
+    -webkit-animation-name: startRight;
+    animation-name: startRight;
+    img {
+      -webkit-transform: rotate(20deg);
+      transform: rotate(20deg);
+    }
+  }
+}
+.tt43 {
+.ball-scale-ripple {
+  span {
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    border-radius: 100%;
+    border: 2px solid pink;
+    -webkit-animation: ball-scale-ripple 1s 0s infinite cubic-bezier(.21, .53, .56, .8);
+    animation: ball-scale-ripple 1s 0s infinite cubic-bezier(.21, .53, .56, .8); 
+    }
+  }
+}
+.tt42 {
+  img {
+    width: 82px;
+    animation: flight 3s ease-in-out 0s infinite alternate none;
+    -webkit-animation: flight 3s ease-in-out 0s infinite alternate none;
+  }
 }
 .tt41 {
   .door {
