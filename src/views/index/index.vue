@@ -107,6 +107,7 @@
 <script>
 import aplayer from "vue-aplayer";
 import { VueCropper } from 'vue-cropper'
+import request from '@/http/request'
 export default {
   name: "FirstPage",
   data() {
@@ -182,6 +183,9 @@ export default {
     aplayer,
     VueCropper
   },
+  created() {
+    this.getData()
+  },
   mounted() {
     this.roll()
     let that = this;
@@ -215,7 +219,14 @@ export default {
       })
   },
   methods: {
-  
+    getData() {
+         // 假装要使用http_mock发送请求（mock自动拦截请求并生成数据）
+　　　  // 此处第一个参数需要和Mock.mock()中的第一个参数一致
+        console.log('请求开始')
+        request.http_mock('http://route.showapi.com/60-27','api_id=63114&api_sign=3847b0').then(response => {
+            console.log(response._data)
+        })
+    },
     down(type) {
       // event.preventDefault()
       // 输出

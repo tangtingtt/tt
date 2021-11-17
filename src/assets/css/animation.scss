@@ -154,3 +154,41 @@
         right: 0;
     }
 }
+@keyframes BX_AniKey1-jsx-2017940065 {
+    0% {
+        opacity: 0.3;
+        transform: scale(1.4, 1.4);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1, 1);
+    }
+}
+@keyframes farmv2bubble {
+    0%, 100% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+    50% {
+        -webkit-transform: translateY(-.21333rem);
+        transform: translateY(-.21333rem);
+    }
+}
+@keyframes _1bSY3Vx {
+    0%, 40% {
+        -webkit-transform: translateY(0) rotateZ(0);
+        transform: translateY(0) rotateZ(0);
+    }
+    66.5% {
+        -webkit-transform: translateY(-36px) rotateZ(
+    -180deg);
+        transform: translateY(-36px) rotateZ(
+    -180deg);
+    }
+    93%, 100% {
+        -webkit-transform: translateY(0) rotateZ(
+    -360deg);
+        transform: translateY(0) rotateZ(
+    -360deg);
+    }
+}

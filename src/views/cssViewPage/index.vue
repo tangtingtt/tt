@@ -1,5 +1,6 @@
 <template>
   <div class="css-container">
+    <div>
     <div class="size1">
       <div class="height36">
         <div class="loc-mc-box">
@@ -199,33 +200,43 @@
     <div class="size1 tt42 relative">
       <img src="../../assets/rocket.png"/>
     </div>
-    <div class="size1 tt43 relative">
-      <span class="loader-inner ball-scale-ripple">
-          <span></span>
-      </span>
-    </div>
-    <div class="size1 tt44 relative">
-      <ul class="slider">
-        <li class="slider-item slider-item0">
-          <img src="../../assets/live-1.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
-        </li>
-        <li class="slider-item slider-item1">
-          <img src="../../assets/live-2.png" data-mst-type="img" alt="图片"  lazy="loaded" style="">
-        </li>
-        <li class="slider-item slider-item2">
-          <img src="../../assets/live-3.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
-        </li>
-        <li class="slider-item slider-item3">
-          <img src="../../assets/live-4.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
-        </li>
-        <li class="slider-item slider-item4">
-          <img src="../../assets/live-5.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
-        </li>
-        <li class="slider-item slider-item5">
-          <img src="../../assets/live-6.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
-        </li>
-      </ul>
-      <img src="../../assets/live.png" class="live-icon"/>
+      <div class="size1 tt43 relative">
+        <span class="loader-inner ball-scale-ripple">
+            <span></span>
+        </span>
+      </div>
+      <div class="size1 tt44 relative">
+        <ul class="slider">
+          <li class="slider-item slider-item0">
+            <img src="../../assets/live-1.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+          </li>
+          <li class="slider-item slider-item1">
+            <img src="../../assets/live-2.png" data-mst-type="img" alt="图片"  lazy="loaded" style="">
+          </li>
+          <li class="slider-item slider-item2">
+            <img src="../../assets/live-3.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+          </li>
+          <li class="slider-item slider-item3">
+            <img src="../../assets/live-4.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+          </li>
+          <li class="slider-item slider-item4">
+            <img src="../../assets/live-5.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+          </li>
+          <li class="slider-item slider-item5">
+            <img src="../../assets/live-6.png" data-mst-type="img" alt="图片" lazy="loaded" style="">
+          </li>
+        </ul>
+        <img src="../../assets/live.png" class="live-icon"/>
+      </div>
+      <div class="size1 tt45 relative">
+         <img src="../../assets/status-tag.png" class="status-tag"/>
+      </div>
+      <div class="size1 tt46 relative">
+         <img src="../../assets/fertilizer.png" class="fertilizer"/>
+      </div>
+       <div class="size1 tt47 relative">
+         <img src="../../assets/mini-hb.png" class="mini-hb"/>
+      </div>
     </div>
   </div>
 </template>
@@ -239,7 +250,6 @@ export default {
     };
   },
   components: {
-
   },
   mounted() {
   },
@@ -450,6 +460,27 @@ export default {
         transform: rotate(0deg);
         transform-origin: 50% 100%;
     }
+}
+.tt47 {
+  .mini-hb {
+    width: 32px;
+    animation: _1bSY3Vx 1.5s linear infinite;
+  }
+}
+.tt46 {
+  background-color: pink !important;
+  .fertilizer  {
+    width: 86px;
+    animation: farmv2bubble 1000ms ease infinite;
+  }
+}
+.tt45 {
+  .status-tag {
+    width: 86px;
+    opacity: 0;
+    transform: scale(1, 1);
+    animation: 1s ease 0s 1 normal forwards running BX_AniKey1-jsx-2017940065;
+  }
 }
 .tt44 {
   align-items: end !important;

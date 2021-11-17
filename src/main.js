@@ -6,12 +6,17 @@ import 'element-ui/lib/theme-chalk/index.css'
 import App from './App'
 import router from './router'
 import vueToTop from 'vue-totop'
+
+import mock from '@/http/mock'
+
 import './assets/icon/iconfont.css'
 // 引入音乐插件
 import vueAplayer from 'vue-aplayer'
 // 引入echarts
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts
+
+
 import './assets/css/common.scss';
 import './assets/css/font.scss';
 // 引入alloyfinger
