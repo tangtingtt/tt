@@ -234,8 +234,29 @@
       <div class="size1 tt46 relative">
          <img src="../../assets/fertilizer.png" class="fertilizer"/>
       </div>
-       <div class="size1 tt47 relative">
+      <div class="size1 tt47 relative">
          <img src="../../assets/mini-hb.png" class="mini-hb"/>
+      </div>
+      <div class="size1 tt48">
+         <div class="check-wrap">
+            <input type="checkbox" class="checkbox" id="check-1" />
+            <label for="check-1">男</label>
+            <input type="checkbox" class="checkbox" id="check-2" />
+            <label for="check-2">女</label>
+        </div>
+      </div>
+      <div class="size1 tt49">
+        <div class="check-wrap">
+            <input type="checkbox" class="switch-an" id="switch-an-1" />
+            <label for="switch-an-1"></label>
+        </div>
+      </div>
+      <div class="size1 tt50">
+        <div class="br-31 black-theme"></div>
+        <div class="br-31 br-32 black-theme" style="animation-delay:-1s"></div>
+      </div>
+      <div class="size1 tt51">
+        <div class="loading"></div>
       </div>
     </div>
   </div>
@@ -264,202 +285,153 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/css/color.scss';
 @import '@/assets/css/animation.scss';
-  @-moz-keyframes dothabottomcheck{
-      0% { height: 0; }
-      100% { height: 50px; }
-  }
-  @-webkit-keyframes dothabottomcheck{
-      0% { height: 0; }
-      100% { height: 50px; }
-  }
-  @keyframes dothabottomcheck{
-      0% { height: 0; }
-      100% { height: 50px;  }
-  }
-  @keyframes dothatopcheck{
-      0% { height: 0; }
-      50% { height: 0; }
-      100% { height: 120px; }
-  }
-  @-webkit-keyframes dothatopcheck{
-      0% { height: 0; }
-      50% { height: 0; }
-      100% { height: 120px; }
-  }
-  @-moz-keyframes dothatopcheck{
-      0% { height: 0; }
-      50% { height: 0; }
-      100% { height: 120px; }
-  }
-@keyframes piggyFingerFlash {
-    0% {
-        opacity: 0
-    }
+.tt51 {
+  .loading {
+  margin-left: auto;
+  margin-right: auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: transparent;
+  animation: load51 3s linear infinite;
+}
+}
+.tt50 {
+  .br-31{
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(to right,#f6c 50%,#333 0);
+}
+.br-31::before{
+  content: '';
+  display: block;
+  margin-left: 50%;
+  height: 100%;
+  border-radius: 0 100% 100% 0 / 50%;
+  background-color: #f6c;
+  transform-origin: left;
+  animation: skin 4s linear infinite,
+             bg 8s step-end infinite;
+}
 
-    66.66% {
-        opacity: 1
-    }
+.br-32::before{
+  animation-play-state: paused;
+  animation-delay: inherit;
+}
+}
+.tt49 {
+  .check-wrap{
+    margin-bottom: 20px;
+    text-align: center;
+}
+.switch{
+    position: absolute;
+    clip: rect(0,0,0,0);
+}
 
-    to {
-        opacity: 1
-    }
+.switch[type="checkbox"] + label{
+    width: 6em;
+    height: 3em;
+    padding: .3em;
+    border-radius: .3em;
+    border: 1px solid rgba(0,0,0,.2);
+    vertical-align: middle;
+    line-height: 2em; /* 关键 */
+    font-size: 20px;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 1px white inset;
+    background-color: #ccc;
+    background-image: linear-gradient(#ddd,#bbb);
 }
-@keyframes piggyFingerIcon {
-    0% {
-        -webkit-transform: translateZ(0);
-        transform: translateZ(0)
-    }
+.switch[type="checkbox"]:checked + label{
+    box-shadow: 0.05em .1em .2em rgba(0,0,0,.6) inset;
+    border-color: rgba(0,0,0,.3);
+    background: #bbb;
+}
 
-    to {
-        -webkit-transform: translate3d(.1rem,.1rem,0);
-        transform: translate3d(.1rem,.1rem,0)
-    }
+label{
+    margin-right: 40px;
+    font-size: 14px;
 }
-@keyframes animateCls_ltart_1630028639150_A{
-  0.00%{ transform:scaleX(0);opacity:0 }
-  40.38%{ transform:scaleX(0);opacity:0 }
-  45.19%{ transform:scaleX(0);opacity:0 }
-  50.00%{ transform:scaleX(1);opacity:1 }
-  90.38%{ transform:scaleX(1);opacity:1 }
-  95.19%{ transform:scaleX(0);opacity:0 }
-  100.00%{ transform:scaleX(0);opacity:0 }
-}
-@keyframes animateCls_ltart_1630028639154_A{
-  0.00%{ transform:scaleX(1);opacity:1 }
-  40.38%{ transform:scaleX(1);opacity:1 }
-  45.19%{ transform:scaleX(0);opacity:0 }
-  50.00%{ transform:scaleX(0);opacity:0 }
-  90.38%{ transform:scaleX(0);opacity:0 }
-  95.19%{ transform:scaleX(0);opacity:0 }
-  100.00%{ transform:scaleX(1);opacity:1 }
-}
-@keyframes bob {
-  0% {
-    transform: translateY(6px);
-  }
-  6.25% {
-    transform: translateY(-6px);
-  }
-  12.5% {
-    transform: translateY(6px);
-  }
-  18.75% {
-    transform: translateY(-6px);
-  }
-  25% {
-    transform: translateY(6px);
-  }
-  31.25% {
-    transform: translateY(-6px);
-  }
-  37.5% {
-    transform: translateY(6px);
-  }
-  43.75% {
-    transform: translateY(-6px);
-  }
-  50% {
-    transform: translateY(6px);
-  }
-  56.25% {
-    transform: translateY(-6px);
-  }
-  62.5% {
-    transform: translateY(6px);
-  }
-  68.75% {
-    transform: translateY(-6px);
-  }
-  75% {
-    transform: translateY(6px);
-  }
-  81.25% {
-    transform: translateY(-6px);
-  }
-  87.5% {
-    transform: translateY(6px);
-  }
-  93.75% {
-    transform: translateY(-6px);
-  }
-  100% {
-    transform: translateY(6px);
-  }
-}
-@keyframes swing {
-  0% {
-    transform: rotate(5deg);
-  }
-  12.5% {
-    transform: rotate(-10deg);
-  }
-  25% {
-    transform: rotate(10deg);
-  }
-  37.5% {
-    transform: rotate(-15deg);
-  }
-  50% {
-    transform: rotate(23deg);
-  }
-  62.5% {
-    transform: rotate(-23deg);
-  }
-  75% {
-    transform: rotate(15deg);
-  }
-  87.5% {
-    transform: rotate(-10deg);
-  }
-  100% {
-    transform: rotate(5deg);
-  }
-}
-@keyframes beat {
-    0% {
-        transform: translate(580%,-20%) rotate(45deg)scale(1.2)
-    }
 
-    10% {
-        transform: translate(580%,-20%) rotate(45deg)scale(1.3)
-    }
-
-    20% {
-        transform: translate(580%,-20%) rotate(45deg)scale(1.4)
-    }
+.switch-an{
+    position: absolute;
+    clip: rect(0,0,0,0);
 }
-@keyframes twinkle2 {
-    0% {
-        -webkit-transform: rotate(0deg) scale(0);
-        transform: rotate(0deg) scale(0)
-    }
 
-    50% {
-        -webkit-transform: rotate(540deg) scale(1.2);
-        transform: rotate(540deg) scale(1.2)
-    }
-
-    100% {
-        -webkit-transform: rotate(1080deg) scale(0);
-        transform: rotate(1080deg) scale(0)
-    }
+.switch-an[type="checkbox"] + label{
+    position: relative;
+    display: inline-block;
+    width: 5em;
+    height: 2em;
+    line-height: 2em;
+    border-radius: 1em;
+    color: #fff;
+    background: #06c;
+    text-align: left;
 }
-@keyframes hob_shake {
-    15%, 45%{
-        -webkit-transform: rotate(3deg);
-        transform: rotate(3deg);
-        transform-origin: 50% 100%; 
-    }
-    30%{
-        -webkit-transform: rotate(-3deg);
-        transform: rotate(-3deg);
-        transform-origin: 50% 100%;
-    }
-    60% ,100%{
-    	-webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-        transform-origin: 50% 100%;
-    }
+
+.switch-an[type="checkbox"] + label::before{
+    content: '';
+    width:2em;
+    height: 2em;
+     line-height: 2em;
+    position: absolute;
+    left: 0;
+    border-radius: 100%;
+    vertical-align: middle;
+    background-color: #fff;
+    transition: left .3s;
+}
+.switch-an[type="checkbox"] + label::after{
+    content: 'OFF';
+    margin-left: 2.6em;
+}
+.switch-an[type="checkbox"]:checked + label::before{
+    transition: left .3s;
+    left: 3em;
+}
+.switch-an[type="checkbox"]:checked + label::after{
+   content: 'NO';
+   margin-left: .6em;
+}
+}
+.tt48 {
+  .check-wrap{
+    text-align: center;
+}
+  .checkbox{
+      position: absolute;
+      clip: rect(0,0,0,0);
+  }
+  .checkbox[type="checkbox"]:focus + label::before{
+      box-shadow: 0 0 .6em #06c;
+  }
+  .checkbox[type="checkbox"] + label::before{
+      content: '\a0'; /* 不换行空格 */
+      display: inline-block;
+      margin-right: .3em;
+      width: 1em;
+      height: 1em;
+      border-radius: .3em;
+      vertical-align: middle;
+      line-height: 1em; /* 关键 */
+      font-size: 20px;
+      text-align: center;
+      color: #fff;
+      background: gray;
+  }
+  .checkbox[type="checkbox"]:checked + label::before{
+      content: '\2713'; /* 对勾 */
+      background: black;
+  }
+
+  label{
+      margin-right: 40px;
+      font-size: 20px;
+  }
 }
 .tt47 {
   .mini-hb {
