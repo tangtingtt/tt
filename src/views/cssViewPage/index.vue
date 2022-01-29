@@ -258,6 +258,31 @@
       <div class="size1 tt51">
         <div class="loading"></div>
       </div>
+      <div class="size1 tt52 relative">
+        <div class="bg1">
+            <div>
+                <img src="../../assets/been.jpg" alt="" class="icon01" width="30px">
+                <img src="../../assets/been.jpg" alt="" class="icon02" width="30px">
+                <img src="../../assets/been.jpg" alt="" class="icon03" width="30px">
+                <img src="../../assets/been.jpg" alt="" class="icon04" width="30px">
+                <img src="../../assets/been.jpg" alt="" class="icon05" width="30px">
+                <img src="../../assets/been.jpg" alt="" class="icon06" width="30px">
+            </div>
+        </div>
+        <div class="bg2">
+            <div>
+                <span class="icon08">
+                    <img src="../../assets/apple.png" alt="" width="30px">
+                </span>
+                <span class="icon09">
+                    <img src="../../assets/apple.png" alt="" width="30px">
+                </span>
+                <span class="icon10">
+                    <img src="../../assets/apple.png" alt="" width="30px">
+                </span>
+            </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -285,6 +310,101 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/css/color.scss';
 @import '@/assets/css/animation.scss';
+.tt52 {
+  .bg2 {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 9;
+    span {
+      display: inline-block;
+      background-color: #FFFFFF;
+      overflow: hidden;
+      border-radius: 15em;
+      position: absolute;
+      animation: animtran 6s linear infinite;
+      -webkit-animation: animtran 6s linear infinite;
+    }
+    img {
+      padding: 2px;
+      display: block;
+    }
+    div {
+      width: 100px;
+      height: 100px;
+      border: #e376bd 1px solid;
+      border-radius: 15em;
+      position: relative;
+      animation: animtrans 12s linear infinite;
+      -webkit-animation: animtrans 12s linear infinite;
+      .icon08 {
+        top: 0;
+        left: 2px;
+      }
+      .icon09 {
+        bottom: 0;
+        left: 7px;
+      }
+      .icon10 {
+        bottom: 40px;
+        right: -15px;
+      }
+    }
+  }
+  .bg1 {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 26px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    z-index: 10;
+    div {
+      width: 150px;
+      height: 150px;
+      border: #ccc 1px solid;
+      border-radius: 15em;
+      position: relative;
+      animation: animtran 16s linear infinite;
+      -webkit-animation: animtran 16s linear infinite;
+      img {
+        width: 30px;
+        position: absolute;
+        animation: animtrans 16s linear infinite;
+        -webkit-animation: animtrans 16s linear infinite;
+      }
+    }
+    .icon01 {
+      top: 0;
+      left: -6px;
+    }
+    .icon02 {
+      top: 80px;
+      left: -20px;
+    }
+    .icon03 {
+      top: -27px;
+      left: 56px;
+    }
+    .icon04 {
+      top: 0;
+      right: -6px;
+    }
+    .icon05 {
+      top: 80px;
+      right: -20px;
+    }
+    .icon06 {
+      bottom: -21px;
+      right: 50px;
+    }
+  }
+}
 .tt51 {
   .loading {
   margin-left: auto;

@@ -422,3 +422,19 @@
                     40px 0 0 rgba(250, 189, 189, 1);
     }
 }
+@keyframes animtrans {
+  0% {
+    transform: rotateZ(360deg);
+  }
+  100% {
+      transform: rotateZ(0deg);
+  }
+}
+@keyframes animtran {
+  0% {
+    transform: rotateZ(0deg);
+  }
+  100% {
+    transform: rotateZ(360deg);
+  }
+}
