@@ -283,6 +283,9 @@
             </div>
         </div>
       </div>
+      <div class="size1 tt53 relative">
+        <div class="progress"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -310,6 +313,27 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/css/color.scss';
 @import '@/assets/css/animation.scss';
+.tt53 {
+  .progress {
+      display: inline-block;
+      margin: 0;
+      padding-top: 18px;
+      background: #2e8ffb;
+      width: 90%;
+      height: 2px;
+      border-radius: 8px;
+      position: absolute;
+      text-align: center;
+      background-size: 65px 65px;
+      background-image: linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+      background-image: -webkit-linear-gradient(135deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent);
+      animation: animate-bars 3s linear infinite;
+      -webkit-animation: animate-bars 3s linear infinite;
+      -moz-animation: animate-bars 3s linear infinite;
+      -ms-animation: animate-bars 3s linear infinite;
+      -o-animation: animate-bars 3s linear infinite
+  }
+}
 .tt52 {
   .bg2 {
     width: 100px;

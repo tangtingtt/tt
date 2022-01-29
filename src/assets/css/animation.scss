@@ -438,3 +438,13 @@
     transform: rotateZ(360deg);
   }
 }
+
+@keyframes animate-bars {
+  0% {
+      background-position: 0 0
+  }
+
+  100% {
+      background-position: 260px 0
+  }
+}
