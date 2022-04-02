@@ -448,3 +448,40 @@
       background-position: 260px 0
   }
 }
+@keyframes tt54Random {
+  to {
+    background-position: 100%;
+  }
+}
+@keyframes reward1Ani-jsx-986353395 {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+      transform: translate3d(-10px, -10px, 0px);
+  }
+  100% {
+      transform: translate3d(0px, 0px, 0px);
+  }
+}
+@keyframes reward2Ani-jsx-986353395 {
+  0% {
+      transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+      transform: translate3d(10px, -10px, 0px);
+  }
+  100% {
+      transform: translate3d(0px, 0px, 0px);
+  }
+}
+@keyframes printAni-jsx-986353395 {
+  0% {
+      transform: scale(7.09, 7.09);
+      opacity: 0;
+  }
+  100% {
+      transform: scale(1, 1);
+      opacity: 1;
+  }
+}

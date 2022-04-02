@@ -286,6 +286,18 @@
       <div class="size1 tt53 relative">
         <div class="progress"></div>
       </div>
+      <div class="size1 tt54 relative">
+        <div>
+          鼠标hover动画暂停
+        </div>
+      </div>
+      <div class="size1 tt55 relative">
+        <div class="tt55-con">
+          <img src="../../assets/status-tag.png" class="status-tag"/>
+          <img src="../../assets/left_reward.png" alt="" width="100px" class="left-icon">
+          <img src="../../assets/right_reward.png" alt="" width="100px" class="right-icon">
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -313,6 +325,58 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/css/color.scss';
 @import '@/assets/css/animation.scss';
+.tt55 {
+  .tt55-con {
+    border: 1px solid red;
+    background-color: #fbf9f9;
+    width: 102px;
+    height: 102px;
+    position: relative;
+    z-index: 1;
+    .status-tag {
+        width: 66px;
+        position: absolute;
+        left: 20%;
+        top:20%;
+        opacity: 0;
+        animation: 0.3s ease-out 0.7s 1 normal forwards running printAni-jsx-986353395;
+    }
+    .left-icon {
+      position: absolute;
+      left: -59%;
+      top: -10%;
+      z-index: 0;
+      animation: 2s linear 1.18s infinite normal forwards running reward1Ani-jsx-986353395;
+    }
+    .right-icon {
+      position: absolute;
+      left: 59%;
+      top: -30%;
+      z-index: 2;
+      animation: 2s linear 1.18s infinite normal forwards running reward2Ani-jsx-986353395;
+    }
+  }
+}
+.tt54 {
+  div {
+    &:after {
+      content: '';
+      position: absolute;
+      width: 32px;
+      height: 32px;
+      background: url('../../assets/54.svg') 0 / cover no-repeat;
+      right: 100px;
+      top: 39px;
+      animation: tt54Random 1s steps(10) infinite;
+      animation-play-state: running; /*动画运行*/
+    }
+    &:hover {
+      &::after {
+        animation-play-state: paused; /*动画暂停*/
+      }
+    }
+  }
+}
 .tt53 {
   .progress {
       display: inline-block;

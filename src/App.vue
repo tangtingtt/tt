@@ -7,7 +7,10 @@
 
 <script>
 export default {
-  name: 'App'
+  name: 'App',
+  created() {
+    console.log('环境变量:',process.env)
+  }
 }
 </script>
 

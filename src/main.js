@@ -20,12 +20,12 @@ Vue.prototype.$echarts = echarts
 import './assets/css/common.scss';
 import './assets/css/font.scss';
 // 引入alloyfinger
-import AlloyFinger from 'alloyfinger'
-import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger_vue'
- 
-Vue.use(AlloyFingerPlugin,{
-  AlloyFinger
-})
+// import AlloyFinger from 'alloyfinger'
+// import AlloyFingerPlugin from 'alloyfinger/vue/alloy_finger_vue'
+
+// Vue.use(AlloyFingerPlugin,{
+//   AlloyFinger
+// })
 
 
 Vue.use(vueAplayer)
@@ -33,6 +33,8 @@ Vue.use(ElementUI)
 Vue.use(vueToTop)
 
 Vue.config.productionTip = false
+
+console.log('环境变量:',process.env)
 
 /* eslint-disable no-new */
 new Vue({
