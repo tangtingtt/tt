@@ -8,16 +8,24 @@
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
     "lint": "eslint --ext .js,.vue src",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "test": "node build/build-test.js"
   },
   "dependencies": {
+    "alloyfinger": "^0.1.16",
+    "axios": "^0.24.0",
     "echarts": "^4.9.0",
     "element-ui": "^2.13.2",
     "hls.js": "^0.14.17",
+    "mockjs": "^1.1.0",
+    "style-loader": "^3.0.0",
     "vue": "^2.5.2",
     "vue-aplayer": "^1.6.1",
     "vue-awesome-swiper": "^4.1.1",
+    "vue-codemirror": "^4.0.6",
+    "vue-cropper": "^0.5.6",
     "vue-router": "^3.0.1",
+    "vue-scroll-progress": "^1.1.5",
     "vue-totop": "^1.0.3"
   },
   "devDependencies": {
@@ -33,7 +41,7 @@
     "babel-preset-stage-2": "^6.22.0",
     "chalk": "^2.0.1",
     "copy-webpack-plugin": "^4.0.1",
-    "css-loader": "^0.28.0",
+    "css-loader": "^0.28.11",
     "eslint": "^4.15.0",
     "eslint-config-standard": "^10.2.1",
     "eslint-friendly-formatter": "^3.0.0",
@@ -57,7 +65,7 @@
     "postcss-url": "^7.2.1",
     "rimraf": "^2.6.0",
     "sass": "^1.32.5",
-    "sass-loader": "^7.0.3",
+    "sass-loader": "^7.3.1",
     "semver": "^5.3.0",
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
