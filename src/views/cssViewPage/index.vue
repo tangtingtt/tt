@@ -298,6 +298,25 @@
           <img src="../../assets/right_reward.png" alt="" width="100px" class="right-icon">
         </div>
       </div>
+      <div class="size1 tt56 relative">
+        <div class="tt56-con">
+          <p>clip-path的使用方法</p>
+          <div class="main-con1"></div>
+          <div class="main-con2"></div>
+        </div>
+      </div>
+      <div class="size1 tt57 relative">
+        <div class="tt57-con">
+          工具地址：<a href="https://9elements.github.io/fancy-border-radius/">花式边界半径</a>
+          <div class="main-con"></div>
+        </div>
+      </div>
+      <div class="size1 tt58 relative">
+        <div class="tt58-con">
+          <span class="dog"></span>
+          <div class="text">正在努力奔跑！</div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -325,6 +344,59 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/css/color.scss';
 @import '@/assets/css/animation.scss';
+.tt58 {
+  .dog {
+    display: inline-block;
+    vertical-align: top;
+    width: 64px;
+    height: 40px;
+    background: url('../../assets/dog.png') 0 0;
+    background-size: 100% auto;
+    -webkit-animation: loading_ani steps(3, end) 0.6s infinite;
+    animation: loading_ani steps(3, end) 0.6s infinite;
+  }
+  .text {
+    color: #777;
+    font-size: 13px;
+  }
+}
+@keyframes loading_ani {
+  from {
+          background: url('../../assets/dog.png');
+          background-position: 0 0;
+          background-size: 100% auto;
+  }
+  to {
+          background: url('../../assets/dog.png');
+          background-position: 0 -120px;
+          background-size: 100% auto;
+  }
+}
+.tt57 {
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+  a {
+    color: #2391ef;
+  }
+  .main-con {
+    background-color: palegreen;
+    height: 86px;
+    border-radius: 30% 70% 70% 30%;
+  }
+}
+.tt56 {
+  .main-con1 {
+    background-color: palegreen;
+    height: 24px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 8.18% 100%, 0% 71.875%);
+  }
+  .main-con2 {
+    background-color: #000;
+    height: 24px;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 71.875%, 91.818% 100%, 0% 100%);
+  }
+}
 .tt55 {
   .tt55-con {
     border: 1px solid red;
